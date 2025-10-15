@@ -4830,59 +4830,6 @@ header.page-header {
   }]
 }
 </script><noscript><link href="wp-content/themes/fixmaster/css/style68b3.css?ver=1" rel="stylesheet"/></noscript>
-<style>
-.btn-ic.efsp {
-  background-color: #007bff;
-  border-radius: 12px;
-  padding: 10px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  text-decoration: none;
-  transition: background-color 0.3s;
-}
-.btn-ic.efsp:hover {
-  background-color: #0056b3;
-}
-.btn-ic.efsp i {
-  font-size: 20px;
-  margin-right: 8px;
-  color: #fff;
-}
-.btn-ic.efsp p.ic {
-  margin: 0;
-  color: #fff;
-  font-weight: 600;
-}
-</style>
-a.btn-ic.efsp {
-  background-color: #007bff;     /* niebieskie tło */
-  color: #fff;                   /* biały tekst i ikona */
-  border-radius: 12px;
-  padding: 10px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  transition: background-color 0.3s;
-}
-
-a.btn-ic.efsp:hover {
-  background-color: #0056b3;
-}
-
-a.btn-ic.efsp i {
-  font-size: 20px;
-  margin-right: 8px;
-  color: #fff;
-}
-
-a.btn-ic.efsp p.ic {
-  margin: 0;
-  color: #fff;
-  font-weight: 600;
-}
 
 </head>
 <body>
@@ -5015,11 +4962,14 @@ p.ic {
 </div>
 <div class="hamburger-menu"> <span></span> <span></span> <span></span> </div>
 <div class="navbar-button">
-  <a href="tel:+48789098788" class="btn-ic efsp">
-    <i class="flaticon-headphones iconp"></i>
-    <p class="ic">+48 789 098 788</p>
-  </a>
+  <div class="btn-ic efsp no-anim"
+       onclick="window.location='tel:+48789098788'"
+       style="cursor:pointer;">
+    <i class="flaticon-headphones iconp" aria-hidden="true"></i>
+    <span class="ic">+48 789 098 788</span>
+  </div>
 </div>
+
 </div>
 </div>
 </nav>
