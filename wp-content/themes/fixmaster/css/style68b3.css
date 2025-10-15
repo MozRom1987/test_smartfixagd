@@ -1,21 +1,5 @@
 @charset "UTF-8";
-/*-----------------------------------------------------------
 
-  Template Name: FixMaster - Appliances Repair WordPress Theme
-  Template URI: https://www.templatemonster.com/authors/garantiwebt/
-  Description: FixMaster - Appliances Repair WordPress Theme
-  Author: adem özdamar
-  Author URI: https://www.templatemonster.com/authors/garantiwebt/
-  Version: 1.0.0
-
--------------------------------------------------------------*/
-/*
-0 - 600   : Telefon
-600 - 900 : Tablet
-900-1200  : Table büyük versiyon
-1000 ve üzeri: Büyük masaüstü
-1200 - 1800  : Normal stiller için
-*/
 
 @import url("https://fonts.googleapis.com/css2?family=Outfit&amp;display=swap");
 .h-yazi-ortalama {
