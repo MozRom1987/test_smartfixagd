@@ -135,3 +135,54 @@
   font-size: 16px !important;    /* ZWIĘKSZONE */
   line-height: 1.5 !important;
 }
+/* --- Pasek z markami (auto-scroll) --- */
+.brand-area {
+  background: #fff;
+  overflow: hidden;
+  padding: 40px 0;
+}
+
+.brand-slider {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.brand-track {
+  display: flex;
+  width: calc(200%); /* bo mamy duplikat logotypów */
+  animation: scrollBrands 30s linear infinite;
+}
+
+.brand-track img {
+  height: 60px;
+  width: auto;
+  margin: 0 40px;
+  filter: grayscale(100%);
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.brand-track img:hover {
+  filter: none;
+  opacity: 1;
+}
+
+/* --- Kluczowa animacja --- */
+@keyframes scrollBrands {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* --- Responsywność --- */
+@media (max-width: 992px) {
+  .brand-track img { height: 50px; margin: 0 30px; }
+}
+
+@media (max-width: 768px) {
+  .brand-track img { height: 40px; margin: 0 20px; }
+}
+
+@media (max-width: 480px) {
+  .brand-track img { height: 30px; margin: 0 15px; }
+}
