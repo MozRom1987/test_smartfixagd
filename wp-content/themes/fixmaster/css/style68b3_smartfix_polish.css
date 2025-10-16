@@ -135,96 +135,74 @@
   font-size: 16px !important;    /* ZWIĘKSZONE */
   line-height: 1.5 !important;
 }
-.marka {
-  height: 70px;            /* większe logo */
-  width: auto;
-  max-width: 180px;
-  object-fit: contain;
-  margin: 10px 0;
-  filter: grayscale(100%);
-  opacity: 0.9;
-  transition: all 0.3s ease;
-}
+/* =====================================================
+   Sekcja marek AGD — czysty, niezależny CSS
+   ===================================================== */
 
-.marka:hover {
-  filter: none;
-  opacity: 1;
-  transform: scale(1.08);
-}
-
-/* Responsywność */
-@media (max-width: 992px) {
-  .marka { height: 60px; max-width: 150px; }
-}
-
-@media (max-width: 768px) {
-  .marka { height: 50px; max-width: 130px; }
-}
-
-@media (max-width: 480px) {
-  .marka { height: 40px; max-width: 100px; }
-}
-/* === FIX: Duże logotypy marek AGD === */
-.marka {
-  height: 100px !important;        /* zwiększone z 70px → 100px */
-  width: auto !important;
-  max-width: 220px !important;     /* pozwala rosnąć szerzej */
-  display: inline-block !important;
-  object-fit: contain !important;
-  margin: 15px 25px !important;
-  filter: grayscale(100%);
-  opacity: 0.95;
-  transition: all 0.3s ease;
-  vertical-align: middle;
-}
-
-.marka:hover {
-  filter: none;
-  opacity: 1;
-  transform: scale(1.1);
-}
-
-/* Równe rozmieszczenie w rzędach */
-.uu {
-  display: flex !important;
-  flex-wrap: wrap !important;
-  justify-content: center !important;
-  align-items: center !important;
-  gap: 30px !important;
+/* Ustawienie rzędu logotypów */
+.row.uu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
   text-align: center;
 }
 
-/* Responsywność */
-@media (max-width: 992px) {
-  .marka { height: 80px !important; max-width: 180px !important; }
-}
-
-@media (max-width: 768px) {
-  .marka { height: 65px !important; max-width: 150px !important; }
-}
-
-@media (max-width: 480px) {
-  .marka { height: 55px !important; max-width: 130px !important; }
-}
-/* Ramka jak PNG 209×159: logo zawsze duże, wycentrowane */
-.logo-box{
+/* Ramka logotypu (każdy ma ten sam rozmiar) */
+.logo-box {
   width: 209px;
   height: 159px;
   display: inline-block;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: contain; /* najważniejsze – skaluje bez obcięcia */
+  background-size: contain;
   filter: grayscale(100%);
-  opacity: .9;
-  transition: transform .25s ease, opacity .25s ease, filter .25s ease;
-  margin: 12px 8px;
-}
-.logo-box:hover{ filter:none; opacity:1; transform:scale(1.06); }
-
-/* większe na desktopie – możesz dopasować */
-@media (min-width:1200px){
-  .logo-box{ width:240px; height:180px; }
+  opacity: 0.9;
+  transition: transform 0.25s ease, opacity 0.25s ease, filter 0.25s ease;
+  margin: 15px;
 }
 
-/* elastyczny rząd (gdyby Bootstrap nie rozkładał jak chcesz) */
-.row.uu{ gap: 12px 24px; justify-content:center; }
+/* Efekt po najechaniu myszką */
+.logo-box:hover {
+  filter: none;
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+/* Wyrównanie kolumn wewnątrz rzędu */
+.row.uu > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Większe logotypy na dużych ekranach */
+@media (min-width: 1200px) {
+  .logo-box {
+    width: 250px;
+    height: 180px;
+  }
+}
+
+/* Rozmiary pośrednie */
+@media (max-width: 992px) {
+  .logo-box {
+    width: 180px;
+    height: 140px;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo-box {
+    width: 150px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-box {
+    width: 120px;
+    height: 100px;
+  }
+}
