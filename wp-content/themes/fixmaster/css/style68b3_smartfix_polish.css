@@ -135,64 +135,47 @@
   font-size: 16px !important;    /* ZWIĘKSZONE */
   line-height: 1.5 !important;
 }
-/* --- Sekcja z markami (wersja klasyczna) --- */
-.brand-area {
+/* --- Sekcja marek (oryginalna struktura, poprawione SVG) --- */
+.sectionbars4 {
   background-color: #fff;
   padding: 70px 0 60px;
   text-align: center;
-  border-top: 2px solid #e6ecf3;
-  border-bottom: 2px solid #e6ecf3;
 }
 
-.brand-area .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 15px;
-}
-
-/* --- Tytuł i opis --- */
-.brand-title {
+/* Nagłówek i podtytuł */
+.h2-baslik-hizmetler-2 {
   font-size: 28px;
   font-weight: 800;
   color: #0c2d62;
-  margin-bottom: 10px;
   text-transform: uppercase;
   letter-spacing: 1px;
+  margin-bottom: 10px;
 }
 
-.brand-subtitle {
+.h2-baslik-hizmetler-2__paragraf {
   font-size: 17px;
   color: #5a5a5a;
   margin-bottom: 45px;
-  font-weight: 400;
 }
 
-/* --- Rząd logotypów --- */
-.brand-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 60px;
-}
-
-/* --- Logotypy --- */
-.brand-row img {
+/* Pojedyncze logo */
+.marka {
   height: 45px;
   width: auto;
   max-width: 120px;
+  object-fit: contain;
   filter: grayscale(100%);
   opacity: 0.85;
   transition: all 0.3s ease;
 }
 
-.brand-row img:hover {
+.marka:hover {
   filter: none;
   opacity: 1;
   transform: scale(1.05);
 }
 
-/* --- Indywidualne dopasowania --- */
+/* Drobne korekty dla proporcji SVG */
 img[alt="Samsung"] { max-width: 115px; }
 img[alt="Whirlpool"] { max-width: 105px; }
 img[alt="Electrolux"] { max-width: 100px; }
@@ -200,23 +183,13 @@ img[alt="Bosch"] { max-width: 95px; }
 img[alt="LG"] { max-width: 80px; }
 img[alt="Siemens"] { max-width: 95px; }
 
-/* --- Responsywność --- */
+/* Responsywność */
 @media (max-width: 992px) {
-  .brand-title { font-size: 24px; }
-  .brand-subtitle { font-size: 15px; margin-bottom: 35px; }
-  .brand-row { gap: 40px; }
-  .brand-row img { height: 38px; }
+  .marka { height: 38px; }
 }
-
 @media (max-width: 768px) {
-  .brand-title { font-size: 22px; }
-  .brand-row { gap: 30px; }
-  .brand-row img { height: 34px; }
+  .marka { height: 34px; }
 }
-
 @media (max-width: 480px) {
-  .brand-title { font-size: 20px; }
-  .brand-subtitle { font-size: 14px; }
-  .brand-row { gap: 25px; }
-  .brand-row img { height: 30px; }
+  .marka { height: 30px; }
 }
