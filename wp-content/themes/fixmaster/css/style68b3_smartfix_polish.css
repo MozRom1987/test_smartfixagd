@@ -206,3 +206,25 @@
 @media (max-width: 480px) {
   .marka { height: 55px !important; max-width: 130px !important; }
 }
+/* Ramka jak PNG 209×159: logo zawsze duże, wycentrowane */
+.logo-box{
+  width: 209px;
+  height: 159px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain; /* najważniejsze – skaluje bez obcięcia */
+  filter: grayscale(100%);
+  opacity: .9;
+  transition: transform .25s ease, opacity .25s ease, filter .25s ease;
+  margin: 12px 8px;
+}
+.logo-box:hover{ filter:none; opacity:1; transform:scale(1.06); }
+
+/* większe na desktopie – możesz dopasować */
+@media (min-width:1200px){
+  .logo-box{ width:240px; height:180px; }
+}
+
+/* elastyczny rząd (gdyby Bootstrap nie rozkładał jak chcesz) */
+.row.uu{ gap: 12px 24px; justify-content:center; }
