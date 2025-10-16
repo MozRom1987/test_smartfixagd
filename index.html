@@ -5,6 +5,20 @@
 <meta name="robots" content="noindex, nofollow">
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- ===== SPOSÓB 1: PRELOAD OBRAZKA ===== -->
+<link 
+  rel="preload" 
+  as="image" 
+  href="wp-content/uploads/2023/10/slider-fixmaster-1.webp"
+  fetchpriority="high">
+
+<!-- Dla mobile - mniejszy obrazek -->
+<link 
+  rel="preload" 
+  as="image" 
+  href="wp-content/uploads/2023/10/slider-fixmaster-1-mobile.webp"
+  media="(max-width: 768px)"
+  fetchpriority="high">
 <link href="https://fonts.googleapis.com/css?family=Poppins:100,300,400,700,900" rel="stylesheet"/>
 <meta content="max-image-preview:large" name="robots"/>
 <style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
@@ -4952,7 +4966,28 @@ p.ic {
 <div class="main-slider">
 <div class="swiper-wrapper">
 <div class="swiper-slide">
-<div class="slide-image" data-background="wp-content/uploads/2023/10/slider-fixmaster-1.webp"></div>
+<!-- ===== SPOSÓB 2: PRAWDZIWY IMG ===== -->
+<picture>
+  <source 
+    media="(max-width: 768px)" 
+    srcset="wp-content/uploads/2023/10/slider-fixmaster-1-mobile.webp">
+  <source 
+    media="(min-width: 769px)" 
+    srcset="wp-content/uploads/2023/10/slider-fixmaster-1.webp">
+  <img 
+    src="wp-content/uploads/2023/10/slider-fixmaster-1.webp"
+    alt="Mobilny Serwis AGD SmartFix"
+    class="slide-image-preload"
+    fetchpriority="high"
+    loading="eager"
+    width="1920"
+    height="1080"
+    style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;box-shadow:0 0 0 5000px rgb(4 4 4 / 54%) inset;z-index:1;">
+</picture>
+
+<!-- Zostaw dla Swipera -->
+<div class="slide-image" data-background="wp-content/uploads/2023/10/slider-fixmaster-1.webp" style="z-index:2;opacity:0;"></div>
+
 <div class="container ff">
 <h1>Mobilny Serwis AGD SmartFix – Naprawa Pralek, Lodówek, Zmywarek i Innego Sprzętu</h1>
 <p>Przywrócimy do życia Twój sprzęt chłodniczy i uratujemy Twoją żywność. </p>
@@ -5698,20 +5733,8 @@ document.querySelectorAll('#smartfix-form input, #smartfix-form textarea').forEa
 ...
 </section>
 
-<!-- Atrapa Swipera przed właściwym skryptem -->
-<script>
-  // Lekka atrapa, żeby motyw się nie wywalił
-  window.Swiper = function () {
-    return {
-      on: function(){},
-      slideTo: function(){},
-      update: function(){},
-      autoplay: false
-    };
-  };
-</script>
-
 <!-- Teraz oryginalny skrypt motywu -->
-<script id="scripts-js" src="wp-content/themes/fixmaster/js/scripts68b3.js?ver=1"></script>
+<!-- ===== SPOSÓB 3: DEFER SWIPER ===== -->
+<script id="scripts-js" src="wp-content/themes/fixmaster/js/scripts68b3.js?ver=1" defer></script>
 </body>
 </html>
