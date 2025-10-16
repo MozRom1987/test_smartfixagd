@@ -4776,6 +4776,11 @@ header.page-header {
     outline: 2px solid #d20000;
     outline-offset: 2px;
 }
+/* Ukryj strzałki slidera */
+.button-prev,
+.button-next {
+    display: none !important;
+}
 </style>
 </link><meta content="Mobilny serwis AGD – Jarosław, Przemyśl, powiat jarosławski i przemyski. Naprawa pralek, lodówek, zmywarek i innych urządzeń z dojazdem. SmartFixAGD." name="description"/><meta content="serwis AGD Jarosław, serwis AGD Przemyśl, naprawa pralek, serwis zmywarek, SmartFixAGD, naprawa lodówek" name="keywords"/><meta content="SmartFixAGD – Serwis i naprawa sprzętu AGD" property="og:title"/><meta content="Naprawa pralek, zmywarek, lodówek i piekarników. Jarosław, Przemyśl i okolice." property="og:description"/><meta content="website" property="og:type"/><meta content="https://smartfixagd.pl" property="og:url"/><script type="application/ld+json">
 {
@@ -5549,6 +5554,7 @@ background-position: center !important;box-shadow: 0px 0px 0px 5000px #0066ccbf 
 <script id="mag-js" src="wp-content/themes/fixmaster/js/mag68b3.js?ver=1"></script>
 <script id="pointer-js" src="wp-content/themes/fixmaster/js/pointer68b3.js?ver=1"></script>
 <script id="yukari-cik-js" src="wp-content/themes/fixmaster/js/yukari-cik68b3.js?ver=1"></script>
+<script id="custom-js" src="wp-content/themes/fixmaster/custom68b3.js?ver=1"></script>
 <script>
         init_pointer({
         })
@@ -5739,5 +5745,28 @@ const brandSwiper = new Swiper('.brand-carousel', {
     }
 });
 </script>
+...
+</section>
+
+<!-- Atrapa Swipera przed właściwym skryptem -->
+<script>
+  // Lekka atrapa, żeby motyw się nie wywalił
+  window.Swiper = function () {
+    return {
+      on: function(){},
+      slideTo: function(){},
+      update: function(){},
+      autoplay: false
+    };
+  };
+</script>
+
+<!-- Teraz oryginalny skrypt motywu -->
+<script id="scripts-js" src="wp-content/themes/fixmaster/js/scripts68b3.js?ver=1"></script>
+</body>
+</html>
+
+<script id="scripts-js" src="wp-content/themes/fixmaster/js/scripts68b3.js?ver=1"></script>
+<script>
 </body>
 </html>
