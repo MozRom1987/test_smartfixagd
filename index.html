@@ -5730,11 +5730,19 @@ document.querySelectorAll('#smartfix-form input, #smartfix-form textarea').forEa
   "serviceType": "Appliance repair"
 }
 </script>
-...
-</section>
+<!-- Atrapa Swipera przed właściwym skryptem -->
+<script>
+  window.Swiper = function () {
+    return {
+      on: function(){},
+      slideTo: function(){},
+      update: function(){},
+      autoplay: false
+    };
+  };
+</script>
 
-<!-- Teraz oryginalny skrypt motywu -->
-<!-- ===== SPOSÓB 3: DEFER SWIPER ===== -->
-<script id="scripts-js" src="wp-content/themes/fixmaster/js/scripts68b3.js?ver=1" defer></script>
+<script id="scripts-js" src="wp-content/themes/fixmaster/js/scripts68b3.js?ver=1"></script>
+
 </body>
 </html>
