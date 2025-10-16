@@ -136,24 +136,33 @@
   line-height: 1.5 !important;
 }
 .brand-track img {
-  height: 40px;             /* wspólna wysokość dla wszystkich logo */
-  width: auto;              /* proporcjonalna szerokość */
-  object-fit: contain;      /* zachowuje proporcje SVG */
-  aspect-ratio: 3 / 1;      /* wymusza mniej więcej poziome proporcje */
+  height: 40px;             /* jednolita wysokość */
+  width: auto;
+  max-width: 120px;         /* ogranicza szerokie logotypy */
+  object-fit: contain;
   flex-shrink: 0;
-  margin: 0 35px;
+  margin: 0 30px;
   filter: grayscale(100%);
   opacity: 0.8;
   transition: all 0.3s ease;
   vertical-align: middle;
 }
 
+/* Efekt hover */
 .brand-track img:hover {
   filter: none;
   opacity: 1;
 }
 
-/* --- Responsywność --- */
+/* Drobne korekty dla konkretnych marek */
+img[alt="Samsung"] { max-width: 110px; }   /* bardzo szerokie logo */
+img[alt="Whirlpool"] { max-width: 100px; }
+img[alt="Electrolux"] { max-width: 100px; }
+img[alt="Bosch"] { max-width: 90px; }
+img[alt="LG"] { max-width: 70px; }
+img[alt="Siemens"] { max-width: 90px; }
+
+/* Responsywność */
 @media (max-width: 992px) {
   .brand-track img { height: 35px; margin: 0 25px; }
 }
