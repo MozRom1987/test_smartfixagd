@@ -135,75 +135,82 @@
   font-size: 16px !important;    /* ZWIĘKSZONE */
   line-height: 1.5 !important;
 }
-/* --- Sekcja z markami (statyczna) --- */
-.brand-area {
-  background: #fff;
-  padding: 50px 0;
+/* --- Sekcja marek (statyczna) --- */
+.sectionbars4 {
+  background: #ffffff;
+  padding: 70px 0 60px;
   text-align: center;
 }
 
-.brand-area .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 15px;
-}
-
-.brand-title {
-  font-size: 26px;
+/* Nagłówek i opis */
+.brand-heading {
+  font-size: 28px;
   font-weight: 700;
-  color: #0c2d62; /* dopasowany do Twojego stylu FixMaster */
-  margin-bottom: 40px;
+  color: #0b2a5b; /* FixMaster niebieski */
+  margin-bottom: 15px;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
 }
 
-.brand-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+.brand-subtitle {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 50px;
+}
+
+/* Siatka logotypów */
+.brand-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 40px;
+  align-items: center;
+  justify-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-/* --- Logotypy --- */
-.brand-row img {
-  height: 40px;
+/* Logotypy */
+.brand-logo {
+  height: 45px;
   width: auto;
   max-width: 120px;
   object-fit: contain;
   filter: grayscale(100%);
-  opacity: 0.8;
+  opacity: 0.85;
   transition: all 0.3s ease;
 }
 
-.brand-row img:hover {
+.brand-logo:hover {
   filter: none;
   opacity: 1;
+  transform: scale(1.05);
 }
 
-/* Korekty indywidualne */
-img[alt="Samsung"] { max-width: 110px; }
-img[alt="Whirlpool"] { max-width: 100px; }
-img[alt="Electrolux"] { max-width: 100px; }
-img[alt="Bosch"] { max-width: 90px; }
-img[alt="LG"] { max-width: 70px; }
-img[alt="Siemens"] { max-width: 90px; }
+/* Drobne korekty indywidualne */
+.brand-logo[alt="Samsung"] { max-width: 110px; }
+.brand-logo[alt="Whirlpool"] { max-width: 100px; }
+.brand-logo[alt="Electrolux"] { max-width: 100px; }
+.brand-logo[alt="Bosch"] { max-width: 90px; }
+.brand-logo[alt="LG"] { max-width: 75px; }
+.brand-logo[alt="Siemens"] { max-width: 90px; }
 
-/* --- Responsywność --- */
+/* Responsywność */
 @media (max-width: 992px) {
-  .brand-title { font-size: 22px; margin-bottom: 30px; }
-  .brand-row { gap: 30px; }
-  .brand-row img { height: 35px; }
+  .brand-heading { font-size: 24px; }
+  .brand-subtitle { font-size: 15px; margin-bottom: 40px; }
+  .brand-grid { gap: 30px; }
+  .brand-logo { height: 40px; }
 }
 
 @media (max-width: 768px) {
-  .brand-title { font-size: 20px; margin-bottom: 25px; }
-  .brand-row { gap: 20px; }
-  .brand-row img { height: 30px; }
+  .brand-heading { font-size: 22px; }
+  .brand-grid { gap: 25px; }
+  .brand-logo { height: 35px; }
 }
 
 @media (max-width: 480px) {
-  .brand-title { font-size: 18px; margin-bottom: 20px; }
-  .brand-row { gap: 15px; }
-  .brand-row img { height: 25px; }
+  .brand-heading { font-size: 20px; }
+  .brand-subtitle { font-size: 14px; }
+  .brand-grid { gap: 20px; }
+  .brand-logo { height: 30px; }
 }
