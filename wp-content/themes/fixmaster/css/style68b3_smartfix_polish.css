@@ -164,3 +164,45 @@
 @media (max-width: 480px) {
   .marka { height: 40px; max-width: 100px; }
 }
+/* === FIX: Duże logotypy marek AGD === */
+.marka {
+  height: 100px !important;        /* zwiększone z 70px → 100px */
+  width: auto !important;
+  max-width: 220px !important;     /* pozwala rosnąć szerzej */
+  display: inline-block !important;
+  object-fit: contain !important;
+  margin: 15px 25px !important;
+  filter: grayscale(100%);
+  opacity: 0.95;
+  transition: all 0.3s ease;
+  vertical-align: middle;
+}
+
+.marka:hover {
+  filter: none;
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* Równe rozmieszczenie w rzędach */
+.uu {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 30px !important;
+  text-align: center;
+}
+
+/* Responsywność */
+@media (max-width: 992px) {
+  .marka { height: 80px !important; max-width: 180px !important; }
+}
+
+@media (max-width: 768px) {
+  .marka { height: 65px !important; max-width: 150px !important; }
+}
+
+@media (max-width: 480px) {
+  .marka { height: 55px !important; max-width: 130px !important; }
+}
