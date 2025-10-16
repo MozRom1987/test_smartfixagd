@@ -19580,3 +19580,94 @@ input#wp-block-search__input-1 {
   .slider-static .container.ff { padding-left: 6%; }
   .slider-static h1 { font-size: 28px; }
 }
+/* === Poprawki do slidera statycznego === */
+.slider-static {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: #fff;
+}
+
+.slider-static .slide-image {
+  position: absolute;
+  inset: 0;
+  background-position: center;
+  background-size: cover;
+  transform: scale(1);
+  animation: slideZoom 14s ease-in-out infinite alternate;
+  will-change: transform;
+  z-index: 0;
+}
+
+/* Gradient przyciemnienia */
+.slider-static::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.45) 45%, rgba(0, 0, 0, 0) 100%);
+  z-index: 1;
+}
+
+/* Kontener z treścią */
+.slider-static .container.ff {
+  position: relative;
+  z-index: 2; /* ponad gradientem */
+  max-width: 850px;
+  padding-left: 8%;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+}
+
+/* Nagłówek i tekst */
+.slider-static h1 {
+  font-size: clamp(34px, 5vw, 58px);
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.1;
+}
+
+.slider-static p {
+  font-size: clamp(18px, 2vw, 22px);
+  margin-bottom: 40px;
+}
+
+/* Przycisk „Więcej” */
+.slider-static .btn-3.efsp {
+  display: inline-block;
+  background: #007bff;
+  color: #fff;
+  border-radius: 10px;
+  padding: 16px 40px;
+  font-weight: 600;
+  font-size: 18px;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
+.slider-static .btn-3.efsp:hover {
+  background: #006ae6;
+  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Animacja tła */
+@keyframes slideZoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}
+
+/* Responsywność */
+@media (max-width: 992px) {
+  .slider-static { height: 80vh; }
+  .slider-static .container.ff { padding-left: 6%; }
+  .slider-static h1 { font-size: 32px; }
+  .slider-static p { font-size: 16px; }
+}
+@media (max-width: 768px) {
+  .slider-static { height: 70vh; }
+  .slider-static .container.ff { padding-left: 5%; }
+  .slider-static h1 { font-size: 28px; }
+}
