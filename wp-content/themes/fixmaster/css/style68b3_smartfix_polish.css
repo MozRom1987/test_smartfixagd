@@ -136,14 +136,16 @@
   line-height: 1.5 !important;
 }
 .brand-track img {
-  height: 50px;              /* stała wysokość */
-  width: auto;               /* szerokość dopasowana proporcjonalnie */
-  object-fit: contain;       /* nie rozciąga obrazów */
-  flex-shrink: 0;            /* zapobiega ściskaniu przy ruchu */
-  margin: 0 40px;
+  height: 40px;             /* wspólna wysokość dla wszystkich logo */
+  width: auto;              /* proporcjonalna szerokość */
+  object-fit: contain;      /* zachowuje proporcje SVG */
+  aspect-ratio: 3 / 1;      /* wymusza mniej więcej poziome proporcje */
+  flex-shrink: 0;
+  margin: 0 35px;
   filter: grayscale(100%);
   opacity: 0.8;
   transition: all 0.3s ease;
+  vertical-align: middle;
 }
 
 .brand-track img:hover {
@@ -151,13 +153,13 @@
   opacity: 1;
 }
 
-/* Dla mniejszych ekranów */
+/* --- Responsywność --- */
 @media (max-width: 992px) {
-  .brand-track img { height: 45px; margin: 0 30px; }
+  .brand-track img { height: 35px; margin: 0 25px; }
 }
 @media (max-width: 768px) {
-  .brand-track img { height: 40px; margin: 0 20px; }
+  .brand-track img { height: 30px; margin: 0 18px; }
 }
 @media (max-width: 480px) {
-  .brand-track img { height: 30px; margin: 0 15px; }
+  .brand-track img { height: 25px; margin: 0 12px; }
 }
