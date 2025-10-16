@@ -135,3 +135,32 @@
   font-size: 16px !important;    /* ZWIĘKSZONE */
   line-height: 1.5 !important;
 }
+.marka {
+  height: 70px;            /* większe logo */
+  width: auto;
+  max-width: 180px;
+  object-fit: contain;
+  margin: 10px 0;
+  filter: grayscale(100%);
+  opacity: 0.9;
+  transition: all 0.3s ease;
+}
+
+.marka:hover {
+  filter: none;
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+/* Responsywność */
+@media (max-width: 992px) {
+  .marka { height: 60px; max-width: 150px; }
+}
+
+@media (max-width: 768px) {
+  .marka { height: 50px; max-width: 130px; }
+}
+
+@media (max-width: 480px) {
+  .marka { height: 40px; max-width: 100px; }
+}
