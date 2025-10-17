@@ -1532,6 +1532,50 @@ p.ic{color:#fff;}
 @font-face{font-family:'Outfit';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/s/outfit/v15/QGYyz_MVcBeNP4NjuGObqx1XmO1I4TC1O4a0EwIrq6c.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
 @font-face{font-family:"Font Awesome 5 Free";font-style:normal;font-weight:400;font-display:block;src:url(https://ka-f.fontawesome.com/releases/v5.15.4/webfonts/free-fa-regular-400.eot);src:url(https://ka-f.fontawesome.com/releases/v5.15.4/webfonts/free-fa-regular-400.eot?#iefix) format("embedded-opentype"),url(https://ka-f.fontawesome.com/releases/v5.15.4/webfonts/free-fa-regular-400.woff2) format("woff2"),url(https://ka-f.fontawesome.com/releases/v5.15.4/webfonts/free-fa-regular-400.woff) format("woff"),url(https://ka-f.fontawesome.com/releases/v5.15.4/webfonts/free-fa-regular-400.ttf) format("truetype"),url(https://ka-f.fontawesome.com/releases/v5.15.4/webfonts/free-fa-regular-400.svg#fontawesome) format("svg");}
 @font-face{font-family:"Font Awesome 5 Free";font-style:normal;font-weight:900;font-display:block;src:url(https://ka-f.fontawesome.com/releases/v5.15.4/webfonts/free-fa-solid-900.eot);src:url(https://ka-f.fontawesome.com/releases/v5.15.4/webfonts/free-fa-solid-900.eot?#iefix) format("embedded-opentype"),url(https://ka-f.fontawesome.com/releases/v5.15.4/webfonts/free-fa-solid-900.woff2) format("woff2"),url(https://ka-f.fontawesome.com/releases/v5.15.4/webfonts/free-fa-solid-900.woff) format("woff"),url(https://ka-f.fontawesome.com/releases/v5.15.4/webfonts/free-fa-solid-900.ttf) format("truetype"),url(https://ka-f.fontawesome.com/releases/v5.15.4/webfonts/free-fa-solid-900.svg#fontawesome) format("svg");} 
+/* ============================================= */
+/* ==== RĘCZNA KOREKTA WIDOCZNOŚCI LOGA ==== */
+/* ============================================= */
+.navbar .logo {
+    margin-right: auto;
+    padding: 21px 0;
+}
+.navbar .logo a img {
+    height: 76px; /* Ustaw właściwą wysokość startową */
+}
+.logo img.s {
+    display: none; /* Ukryj logo dla "sticky" na starcie */
+}
+.sticky .logo img.h {
+    display: none !important; /* Ukryj logo startowe po przewinięciu */
+}
+.sticky .logo img.s {
+    display: block !important; /* Pokaż logo "sticky" po przewinięciu */
+}
+/* ============================================= */
+/* ==== RĘCZNA KOREKTA WIDOCZNOŚCI LOGA ==== */
+/* ============================================= */
+
+/* 1. Kontener loga */
+.navbar .logo {
+    margin-right: auto;
+    padding: 21px 0;
+}
+
+/* 2. Wysokość obrazka loga (potwierdzona wartość) */
+.navbar .logo a img {
+    height: 76px;
+}
+
+/* 3. Mechanizm przełączania logotypów */
+.logo img.s {
+    display: none;
+}
+.sticky .logo img.h {
+    display: none !important;
+}
+.sticky .logo img.s {
+    display: block !important;
+}
 </style>
 <link rel="preload" href="wp-content/themes/fixmaster/css/style68b3.css?ver=1.1" as="style" onload="this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="wp-content/themes/fixmaster/css/style68b3.css?ver=1.1"></noscript>
@@ -6627,8 +6671,8 @@ p.ic {
 <nav class="navbar navbar-expand-md navbar-light bg-light">
 <div class="container">
 <div class="logo"> <a href="index.html">
-<link rel="preload" href="wp-content/uploads/2023/10/fixmaster-logo-6.webp" as="image" fetchpriority="high">
-<img alt="Image" class="s" loading="lazy" src="wp-content/uploads/2023/10/fixmaster-logo-7.webp" title="Image"/>
+    <img alt="Image" class="h" loading="eager" src="wp-content/uploads/2023/10/fixmaster-logo-6.webp">
+    <img alt="Image" class="s" loading="lazy" src="wp-content/uploads/2023/10/fixmaster-logo-7.webp" title="Image"/>
 </a>
 </div>
 <div class="site-menu">
