@@ -3,24 +3,25 @@
 <html lang="pl">
 <head><link as="style" href="wp-content/themes/fixmaster/css/fancybox.min68b3.css?ver=1" onload="this.rel='stylesheet'" rel="preload"/><link as="style" href="wp-content/themes/fixmaster/css/bootstrap.min68b3.css?ver=1" onload="this.rel='stylesheet'" rel="preload"/><link as="style" href="wp-content/themes/fixmaster/css/style68b3.css?ver=1.1" onload="this.rel='stylesheet'" rel="preload"/><link crossorigin="anonymous" href="https://fonts.gstatic.com" rel="preconnect"/><link crossorigin="anonymous" href="https://fonts.googleapis.com" rel="preconnect"/>
 <meta content="noindex, nofollow" name="robots"/>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <!-- ===== SPOSÓB 1: PRELOAD OBRAZKA ===== -->
 <link as="image" fetchpriority="high" href="wp-content/uploads/2023/10/slider-fixmaster-1.webp" rel="preload"/>
 <!-- Dla mobile - mniejszy obrazek -->
 <link as="image" fetchpriority="high" href="wp-content/uploads/2023/10/slider-fixmaster-1-mobile.webp" media="(max-width: 768px)" rel="preload"/>
-<link href="https://fonts.googleapis.com/css?family=Poppins:100,300,400,700,900" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Poppins:100,300,400,700,900" rel="stylesheet">
 <meta content="max-image-preview:large" name="robots"/>
 <style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
-<link href="wp-content/themes/fixmaster/css/style68b3.css?ver=1.1" id="style-css" media="all" rel="stylesheet"/>
-<link href="wp-content/themes/fixmaster/css/fancybox.min68b3.css?ver=1" id="fancybox-css" media="all" rel="stylesheet">
-<link href="wp-content/themes/fixmaster/css/bootstrap.min68b3.css?ver=1" id="bootstrap-css" media="all" rel="stylesheet">
+<link href="wp-content/themes/fixmaster/css/style68b3.css?ver=1.1" id="style-css" media="all" rel="stylesheet">
+<link href="wp-content/themes/fixmaster/css/fancybox.min68b3.css?ver=1" id="fancybox-css" media="all" rel="stylesheet"/>
+
+<link href="wp-content/themes/fixmaster/css/bootstrap.min68b3.css?ver=1" id="bootstrap-css" media="all" rel="stylesheet"/>
 <link href="wp-content/themes/fixmaster/css/odometer.min68b3.css?ver=1" id="odometer-css" media="all" rel="stylesheet"/>
 <link href="wp-content/themes/fixmaster/css/flaticon68b3.css?ver=1" id="flaticon-css" media="all" rel="stylesheet"/>
 <link as="image" href="wp-content/uploads/2023/10/slider-fixmaster-1.webp" rel="preload"/>
-<link href="wp-content/themes/fixmaster/css/style68b3_smartfix_polish.css" rel="stylesheet"/>
-<link href="https://smartfixagd.pl/" rel="canonical">
-<link href="index.html" rel="shortlink"/>
+<link href="wp-content/themes/fixmaster/css/style68b3_smartfix_polish.css" rel="stylesheet">
+<link href="https://smartfixagd.pl/" rel="canonical"/>
+<link href="index.html" rel="shortlink">
 <style>
     a.x2 {
     color: #0066cc !important;
@@ -535,10 +536,8 @@ i.flaticon-play.vdslidericon {
     margin-top: 3px;
 }
 .ahr {
-    display: flex;
-    justify-content: center;
-    margin-right: 0;
-    margin-top: 2rem;
+    display: inline-flex;
+    margin-right: 33px;
     position: relative;
 }
 .deptops {
@@ -729,7 +728,7 @@ p.countb {background: #0066cc;}
     bottom: 50px;
 }
 .boslukpls {
-    margin-top: 2rem;
+    margin-top: -5rem;
 }
 h6.counts {
     font-size: 20px;
@@ -4674,158 +4673,9 @@ h3.prongl {
 header.page-header {
     box-shadow: 0px 0px 0px 5000px #fffffff0 inset;
 }
-/* ===== NAPRAWA POZYCJONOWANIA SLIDERA ===== */
-.slider .main-slider {
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.slider .main-slider .container.ff {
-    position: relative;
-    z-index: 2;
-    color: #fff;
-    text-align: center;
-    padding: 8rem 3rem;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.slider .main-slider picture,
-.slider .main-slider img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
-}
-
-.boslukpls {
-    margin-top: 2rem !important;
-}
-
-.ahr {
-    display: flex !important;
-    justify-content: center !important;
-    margin-right: 0 !important;
-    margin-top: 2rem;
-}
-
-/* Responsywność */
-@media (max-width: 768px) {
-    .slider .main-slider .container.ff {
-        padding: 6rem 1.5rem;
-    }
-    
-    .slider .main-slider .container.ff h1 {
-        font-size: 2rem !important;
-        margin-left: 0 !important;
-    }
-    
-    .slider .main-slider .container.ff p {
-        font-size: 1.1rem !important;
-        margin-left: 0 !important;
-    }
-}
-
-/* Usunięcie konfliktów */
-@media (min-width: 1280px) and (max-width: 1280px) {
-    .slider .main-slider .container.ff h1,
-    .slider .main-slider .container.ff p,
-    .slider .main-slider .container.ff a {
-        margin-left: 0 !important;
-    }
-}
-
-@media (min-width: 1536px) and (max-width: 1536px) {
-    .slider .main-slider .container.ff h1,
-    .slider .main-slider .container.ff p,
-    .slider .main-slider .container.ff a {
-        margin-left: 0 !important;
-    }
-}
-
-@media (min-width: 1745.45px) and (max-width: 1745.45px) {
-    .slider .main-slider .container.ff h1,
-    .slider .main-slider .container.ff p,
-    .slider .main-slider .container.ff a {
-        margin-left: 0 !important;
-    }
-}
-/* ===== KOREKTA POZYCJI I ROZMIARU TEKSTU ===== */
-.slider .main-slider {
-    align-items: flex-start !important;
-    padding-top: 20vh !important;
-    justify-content: flex-start !important;
-}
-
-.slider .main-slider .container.ff {
-    text-align: left !important;
-    padding: 6rem 3rem !important;
-    margin-left: 2.5% !important;
-    margin-right: auto !important;
-}
-
-.slider .main-slider .container.ff h1 {
-    font-size: 4.5rem !important;
-    line-height: 1.2 !important;
-    margin-bottom: 1.5rem !important;
-    text-align: left !important;
-}
-
-.slider .main-slider .container.ff p {
-    font-size: 1.4rem !important;
-    line-height: 1.6 !important;
-    text-align: left !important;
-    margin-bottom: 1rem !important;
-}
-
-.ahr {
-    justify-content: flex-start !important;
-}
-
-/* Responsywność - korekta dla mniejszych ekranów */
-@media (max-width: 768px) {
-    .slider .main-slider .container.ff {
-        text-align: center !important;
-        padding: 8rem 1.5rem !important;
-    }
-    
-    .slider .main-slider .container.ff h1 {
-        font-size: 2.2rem !important;
-        text-align: center !important;
-    }
-    
-    .slider .main-slider .container.ff p {
-        font-size: 1.2rem !important;
-        text-align: center !important;
-    }
-    
-    .ahr {
-        justify-content: center !important;
-    }
-}
-/* ===== TŁUSTY TEKST ===== */
-.slider .main-slider .container.ff h1 {
-    font-weight: 600 !important; /* bardzo grube */
-    font-family: 'Inter', sans-serif !important; /* opcjonalnie - lepsza czytelność dla grubego tekstu */
-}
-
-.slider .main-slider .container.ff p {
-    font-weight: 400 !important; /* średnio-grube */
-}
-
-.slider .main-slider .container.ff .btn-3 {
-    font-weight: 700 !important; /* przycisk też tłusty */
-}
 </style>
 <title>SmartFix AGD – Mobilny Serwis i Naprawa Pralek, Zmywarek, Lodówek, Zamrażarek, Piekarników, Płyt i Kuchenek.</title>
-<link href="wp-content/uploads/2023/10/fixmaster-fav2.webp" rel="shortcut icon" type="image/png">
+<link href="wp-content/uploads/2023/10/fixmaster-fav2.webp" rel="shortcut icon" type="image/png"/>
 <meta content="Profesjonalny mobilny serwis AGD – naprawa pralek, lodówek, zmywarek, piekarników, zamrażarek i kuchenek z dojazdem do klienta. Szybko, tanio i solidnie. SmartFix AGD – naprawa sprzętu na miejscu w Twoim domu." name="description"/>
 </link>
 <style>
@@ -4964,33 +4814,7 @@ header.page-header {
   }]
 }
 </script><noscript><link href="wp-content/themes/fixmaster/css/style68b3.css?ver=1.1" rel="stylesheet"/></noscript>
-</link></link></meta>
-<style>
-.slider .main-slider {
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-.slider .main-slider .container.ff {
-  position: relative;
-  z-index: 2;
-  color: #fff;
-  text-align: left;
-  padding: 12rem 3rem;
-}
-.slider .main-slider picture,
-.slider .main-slider img {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  object-fit: cover;
-  z-index: 1;
-}
-</style>
-</head>
+</link></link></meta></head>
 <body>
 <style>
 .bg-light {background: none;}
@@ -5204,8 +5028,8 @@ p.ic {
 <div class="container">
 <div class="row">
 <div class="col-xl-6">
-<img alt="About fixmaster 1 – SmartFix AGD" class="galeri__gorsel--3ab zimage" decoding="async" loading="lazy" src="wp-content/uploads/2023/10/about-fixmaster-1.webp" title="About fixmaster 1 – SmartFix AGD"/>
-</div>
+<img alt="About fixmaster 1 – SmartFix AGD" class="galeri__gorsel--3ab zimage" decoding="async" loading="lazy" src="wp-content/uploads/2023/10/about-fixmaster-1.webp" title="About fixmaster 1 – SmartFix AGD">
+</img></div>
 <div class="col-xl-6 wow fadeInUp" data-wow-delay="0.3s">
 <h2 class="h2-baslik-anasayfa-ozel btw wow fadeInRight" data-wow-delay="0.4s" style="text-align:left;"> SmartFixAGD: Twój Zaufany Serwis AGD </h2>
 <div class="bosluk333"></div>
