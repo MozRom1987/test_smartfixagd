@@ -1,4 +1,67 @@
 @charset "UTF-8";
+/* ===== FIX CLS - DODAJ NA SAM POCZĄTEK PLIKU ===== */
+* {
+    box-sizing: border-box;
+}
+
+img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.navbar .logo img,
+.side-widget .logo img {
+    width: 150px !important;
+    height: 50px !important;
+}
+
+.container {
+    min-height: 500px !important;
+}
+
+.ahr {
+    min-height: 200px !important;
+}
+
+p {
+    min-height: 1.2em !important;
+}
+
+.btn-3 {
+    min-width: 200px !important;
+    height: 50px !important;
+    display: inline-block !important;
+}
+/* ===== FIX CLS - DODAJ NA SAM POCZĄTEK PLIKU ===== */
+* {
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  min-height: 500px !important;
+}
+
+.ahr {
+  min-height: 200px !important;
+}
+
+p {
+  min-height: 1.2em !important;
+}
+
+.btn-3 {
+  min-width: 200px !important;
+  height: 50px !important;
+  display: inline-block !important;
+}
 /* ===== OSTATECZNA POPRAWKA CLS - UJEDNOLICENIE CZCIONEK ZASTĘPCZYCH ===== */
 
 /* Fallback dla czcionki Outfit */
