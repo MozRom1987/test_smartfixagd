@@ -14,27 +14,30 @@
   line-gap-override: 0%;
 }
 
-/* Główna czcionka Outfit z SWAP */
+/* --- LOKALNE CZCIONKI OUTFIT --- */
+/* Waga 400 (normalna) */
 @font-face {
   font-family: 'Outfit';
-  src: url('https://fonts.gstatic.com/s/outfit/v15/QGYyz_MVcBeNP4NjuGObqx1XmO1I4W61O4a0EwIrq6c.woff2') format('woff2');
-  font-display: swap;
+  font-style: normal;
   font-weight: 400;
-  font-style: normal;
+  font-display: swap;
+  src: url('wp-content/themes/fixmaster/css/fonts/outfit-v15-latin-ext-regular.woff2') format('woff2');
 }
+/* Waga 600 (półgruba - dla H1) */
 @font-face {
   font-family: 'Outfit';
-  src: url('https://fonts.gstatic.com/s/outfit/v15/QGYyz_MVcBeNP4NjuGObqx1XmO1I4bC1O4a0EwIrq6c.woff2') format('woff2');
-  font-display: swap;
+  font-style: normal;
   font-weight: 600;
-  font-style: normal;
+  font-display: swap;
+  src: url('wp-content/themes/fixmaster/css/fonts/outfit-v15-latin-ext-600.woff2') format('woff2');
 }
+/* Waga 900 (bardzo gruba) */
 @font-face {
   font-family: 'Outfit';
-  src: url('https://fonts.gstatic.com/s/outfit/v15/QGYyz_MVcBeNP4NjuGObqx1XmO1I4eu1O4a0EwIrq6c.woff2') format('woff2');
-  font-display: swap;
-  font-weight: 900;
   font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('wp-content/themes/fixmaster/css/fonts/outfit-v15-latin-ext-900.woff2') format('woff2');
 }
 
 /* WYMUSZENIE fallback stack */
@@ -45,7 +48,6 @@ body, h1, h2, h3, h4, p, .slider h1 {
 /* Napraw slider h1 BEZPOŚREDNIO */
 .slider .main-slider .container h1,
 .slider h1 {
-  font-family: 'Outfit', 'OutfitFallback', Arial, sans-serif !important;
   font-size: 4.5rem !important;
   line-height: 1.2 !important;
   font-weight: 600 !important;
@@ -64,8 +66,7 @@ body, h1, h2, h3, h4, p, .slider h1 {
 </style>
 
 <!-- Preconnect dla Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="wp-content/themes/fixmaster/css/fonts/outfit-v15-latin-ext-600.woff2" as="font" type="font/woff2" crossorigin>
 
 <meta content="noindex, nofollow" name="robots"/>
 <!-- reszta head -->  
