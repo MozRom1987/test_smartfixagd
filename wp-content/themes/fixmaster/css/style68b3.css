@@ -12,15 +12,6 @@
   size-adjust: 107.5%;
 }
 
-/* Fallback dla czcionki Inter - WERSJA PRECYZYJNA */
-@font-face {
-  font-family: 'Inter Fallback';
-  src: local('Arial');
-  ascent-override: 90.58%;
-  descent-override: 22.64%;
-  line-gap-override: 0%;
-  size-adjust: 107.41%;
-}
 
 /* ===== KONIEC POPRAWKI CLS ===== */
 
