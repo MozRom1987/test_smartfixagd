@@ -19577,3 +19577,35 @@ img:not(.navbar img):not(.side-widget img) {
     width: 214px;
     height: 76px;
 }
+/* ===== CELOWANE FIXY CLS ===== */
+
+/* 1. GŁÓWNY KONTENER */
+.container:not(.navbar .container) {
+    min-height: 600px !important;
+    position: relative;
+}
+
+/* 2. PARAGRAFY */
+p {
+    min-height: 1.5em !important;
+    line-height: 1.6 !important;
+}
+
+/* 3. PRZYCISKI */
+.btn-3.efsp {
+    min-width: 200px !important;
+    height: 50px !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 4. DODATKOWE ELEMENTY KTÓRE WIDZĘ W RAPORCIE */
+.ahr {
+    min-height: 150px !important;
+}
+
+/* 5. ZAPOBIEGANIE PRZESKAKIWANIU PODCZAS ŁADOWANIA */
+body {
+    font-display: swap;
+}
