@@ -1,4 +1,27 @@
 @charset "UTF-8";
+/* ===== OSTATECZNA POPRAWKA CLS - UJEDNOLICENIE CZCIONEK ZASTĘPCZYCH ===== */
+
+/* Fallback dla czcionki Outfit */
+@font-face {
+  font-family: 'Outfit Fallback';
+  src: local('Arial');
+  ascent-override: 90%;
+  descent-override: 23%;
+  line-gap-override: 0%;
+  size-adjust: 107.5%;
+}
+
+/* Fallback dla czcionki Inter */
+@font-face {
+  font-family: 'Inter Fallback';
+  src: local('Arial');
+  ascent-override: 92%;
+  descent-override: 24%;
+  line-gap-override: 0%;
+  size-adjust: 105%;
+}
+
+/* ===== KONIEC POPRAWKI CLS ===== */
 
 
 /* ===== OSTATECZNY KOD - ZGODNY Z NAZWAMI PLIKÓW ZE ZRZUTU EKRANU ===== */
@@ -20,6 +43,7 @@
 @font-face { font-family: 'Barlow'; font-style: normal; font-weight: 400; font-display: swap; src: url('fonts/barlow-v13-latin-regular.woff2') format('woff2'); }
 
 /* ===== KONIEC LOKALNYCH CZCIONEK ===== */
+
 .h-yazi-ortalama {
   text-align: center; }
   @media only screen and (max-width: 40em) {
@@ -19526,4 +19550,14 @@ input#wp-block-search__input-1 {
   .marka {
     height: 40px !important;
   }
+}
+/* ===== OSTATECZNA POPRAWKA CLS - KOD NADPISUJĄCY ===== */
+/* Ten kod został dodany na końcu pliku, aby nadpisać wcześniejsze definicje font-family */
+
+body {
+    font-family: 'Outfit', 'Outfit Fallback', sans-serif;
+}
+
+.slider .main-slider .container.ff h1 {
+    font-family: 'Inter', 'Inter Fallback', sans-serif !important;
 }
