@@ -19560,7 +19560,7 @@ body {
 }
 
 .slider .main-slider .container.ff h1 {
-    font-family: 'Inter', 'Inter Fallback', sans-serif !important;
+    font-family: 'Outfit', sans-serif !important; 
 }
 /* ===== MINIMALNY FIX CLS ===== */
 img:not(.navbar img):not(.side-widget img) {
