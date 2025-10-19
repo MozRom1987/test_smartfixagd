@@ -1,23 +1,23 @@
 @charset "UTF-8";
 
 
-/* ===== LOKALNE CZCIONKI (SELF-HOSTED) - OSTATECZNA POPRAWKA ŚCIEŻEK I NAZW PLIKÓW ===== */
+/* ===== LOKALNE CZCIONKI (SELF-HOSTED) - POPRAWKA DLA GITHUB PAGES ===== */
 
 /* --- Outfit --- */
-@font-face { font-family: 'Outfit'; font-style: normal; font-weight: 400; font-display: swap; src: url('../fonts/outfit-v15-latin-ext-regular.woff2') format('woff2'); }
-@font-face { font-family: 'Outfit'; font-style: normal; font-weight: 600; font-display: swap; src: url('../fonts/outfit-v15-latin_ext-600.woff2') format('woff2'); }
-@font-face { font-family: 'Outfit'; font-style: normal; font-weight: 900; font-display: swap; src: url('../fonts/outfit-v15-latin_ext-900.woff2') format('woff2'); }
+@font-face { font-family: 'Outfit'; font-style: normal; font-weight: 400; font-display: swap; src: url('/test_smartfixagd/wp-content/themes/fixmaster/fonts/outfit-v15-latin-ext-regular.woff2') format('woff2'); }
+@font-face { font-family: 'Outfit'; font-style: normal; font-weight: 600; font-display: swap; src: url('/test_smartfixagd/wp-content/themes/fixmaster/fonts/outfit-v15-latin_ext-600.woff2') format('woff2'); }
+@font-face { font-family: 'Outfit'; font-style: normal; font-weight: 900; font-display: swap; src: url('/test_smartfixagd/wp-content/themes/fixmaster/fonts/outfit-v15-latin_ext-900.woff2') format('woff2'); }
 
 /* --- Inter --- */
-@font-face { font-family: 'Inter'; font-style: normal; font-weight: 400; font-display: swap; src: url('../fonts/inter-v20-latin_ext-regular.woff2') format('woff2'); }
-@font-face { font-family: 'Inter'; font-style: normal; font-weight: 600; font-display: swap; src: url('../fonts/inter-v20-latin_ext-600.woff2') format('woff2'); }
-@font-face { font-family: 'Inter'; font-style: normal; font-weight: 800; font-display: swap; src: url('../fonts/inter-v20-latin_ext-800.woff2') format('woff2'); }
+@font-face { font-family: 'Inter'; font-style: normal; font-weight: 400; font-display: swap; src: url('/test_smartfixagd/wp-content/themes/fixmaster/fonts/inter-v20-latin_ext-regular.woff2') format('woff2'); }
+@font-face { font-family: 'Inter'; font-style: normal; font-weight: 600; font-display: swap; src: url('/test_smartfixagd/wp-content/themes/fixmaster/fonts/inter-v20-latin_ext-600.woff2') format('woff2'); }
+@font-face { font-family: 'Inter'; font-style: normal; font-weight: 800; font-display: swap; src: url('/test_smartfixagd/wp-content/themes/fixmaster/fonts/inter-v20-latin_ext-800.woff2') format('woff2'); }
 
 /* --- Mohave --- */
-@font-face { font-family: 'Mohave'; font-style: normal; font-weight: 400; font-display: swap; src: url('../fonts/mohave-v13-latin_ext-regular.woff2') format('woff2'); }
+@font-face { font-family: 'Mohave'; font-style: normal; font-weight: 400; font-display: swap; src: url('/test_smartfixagd/wp-content/themes/fixmaster/fonts/mohave-v13-latin_ext-regular.woff2') format('woff2'); }
 
 /* --- Barlow --- */
-@font-face { font-family: 'Barlow'; font-style: normal; font-weight: 400; font-display: swap; src: url('../fonts/barlow-v13-latin-regular.woff2') format('woff2'); }
+@font-face { font-family: 'Barlow'; font-style: normal; font-weight: 400; font-display: swap; src: url('/test_smartfixagd/wp-content/themes/fixmaster/fonts/barlow-v13-latin-regular.woff2') format('woff2'); }
 
 /* ===== KONIEC LOKALNYCH CZCIONEK ===== */
 .h-yazi-ortalama {
