@@ -1,36 +1,74 @@
 @charset "UTF-8";
+/*-----------------------------------------------------------
 
-/* ===== OSTATECZNA POPRAWKA CLS - UJEDNOLICENIE CZCIONEK ZASTĘPCZYCH ===== */
+  Template Name: FixMaster - Appliances Repair WordPress Theme
+  Template URI: https://www.templatemonster.com/authors/garantiwebt/
+  Description: FixMaster - Appliances Repair WordPress Theme
+  Author: adem özdamar
+  Author URI: https://www.templatemonster.com/authors/garantiwebt/
+  Version: 1.0.0
 
-/* Fallback dla czcionki Outfit */
-@font-face {
-  font-family: 'Outfit Fallback';
-  src: local('Arial');
-  ascent-override: 90%;
-  descent-override: 23%;
-  line-gap-override: 0%;
-  size-adjust: 107.5%;
-}
-
-
-/* ===== KONIEC POPRAWKI CLS ===== */
-
-
-/* ===== OSTATECZNY KOD - ZGODNY Z NAZWAMI PLIKÓW ZE ZRZUTU EKRANU ===== */
-
-/* --- Outfit --- */
-@font-face { font-family: 'Outfit'; font-style: normal; font-weight: 400; font-display: swap; src: url('fonts/outfit-v15-latin-ext-regular.woff2') format('woff2'); }
-@font-face { font-family: 'Outfit'; font-style: normal; font-weight: 600; font-display: swap; src: url('fonts/outfit-v15-latin-ext-600.woff2') format('woff2'); }
-@font-face { font-family: 'Outfit'; font-style: normal; font-weight: 900; font-display: swap; src: url('fonts/outfit-v15-latin-ext-900.woff2') format('woff2'); }
-
-/* --- Mohave --- */
-@font-face { font-family: 'Mohave'; font-style: normal; font-weight: 400; font-display: swap; src: url('fonts/mohave-v13-latin-ext-regular.woff2') format('woff2'); }
-
-/* --- Barlow --- */
-@font-face { font-family: 'Barlow'; font-style: normal; font-weight: 400; font-display: swap; src: url('fonts/barlow-v13-latin-regular.woff2') format('woff2'); }
-
-/* ===== KONIEC LOKALNYCH CZCIONEK ===== */
-
+-------------------------------------------------------------*/
+/*
+0 - 600   : Telefon
+600 - 900 : Tablet
+900-1200  : Table büyük versiyon
+1000 ve üzeri: Büyük masaüstü
+1200 - 1800  : Normal stiller için
+*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto&amp;display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex&amp;display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Koulen&amp;display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&amp;display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&amp;display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&amp;display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&amp;display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald&amp;display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway&amp;display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&amp;display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&amp;display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter&amp;display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito&amp;display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans&amp;display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans&amp;display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans&amp;display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans&amp;display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&amp;display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web&amp;display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Serif&amp;display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Catamaran&amp;display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&amp;display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pathway+Gothic+One&amp;display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quattrocento&amp;display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alata&amp;display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Vazirmatn&amp;display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Faustina&amp;display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Updock&amp;display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ms+Madi&amp;display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sora&amp;display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Tangerine&amp;display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Khand&amp;display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Viga&amp;display=swap");
+@import url("https://fonts.googleapis.com/css2?family=BIZ+UDPMincho&amp;display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Hammersmith+One&amp;display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oleo+Script&amp;display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Arsenal&amp;display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Marck+Script&amp;display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cantata+One&amp;display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Changa+One&amp;display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anek+Bangla&amp;display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Days+One&amp;display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Yesteryear&amp;display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mate+SC&amp;display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merienda+One&amp;display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Megrim&amp;display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Allan&amp;display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gemunu+Libre&amp;display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Overlock&amp;display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anek+Gurmukhi&amp;display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gilda+Display&amp;display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bitter&amp;display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit&amp;display=swap");
 .h-yazi-ortalama {
   text-align: center; }
   @media only screen and (max-width: 40em) {
@@ -19537,44 +19575,4 @@ input#wp-block-search__input-1 {
   .marka {
     height: 40px !important;
   }
-}
-/* ===== OSTATECZNA POPRAWKA CLS - KOD NADPISUJĄCY ===== */
-/* Ten kod został dodany na końcu pliku, aby nadpisać wcześniejsze definicje font-family */
-
-body {
-    font-family: 'Outfit', 'Outfit Fallback', sans-serif;
-}
-
-.slider .main-slider .container.ff h1 {
-    font-family: 'Outfit', sans-serif !important; 
-}
-/* ===== MINIMALNY FIX CLS ===== */
-img:not(.navbar img):not(.side-widget img) {
-    max-width: 100%;
-    height: auto;
-}
-
-.navbar .logo img {
-    width: 214px;
-    height: 76px;
-}
-
-.side-widget .logo img {
-    width: 214px;
-    height: 76px;
-}
-/* FIX CZCIONEK - dodaj na końcu style68b3.css */
-@font-face {
-  font-family: 'Mohave';
-  font-display: swap;
-}
-
-body {
-  font-display: swap;
-}
-
-/* Wymusz stabilne wymiary dla nagłówków */
-h1, h2, h3, h4, h5, h6 {
-  min-height: 1.2em;
-  line-height: 1.3;
 }

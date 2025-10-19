@@ -96,6 +96,63 @@
   wow.init();
 
 
+  // MAIN SLIDER
+  var swiper = new Swiper('.main-slider', {
+    slidesPerView: '1',
+    spaceBetween: 0,
+    speed: 1000,
+    effect: 'fade',
+    direction: 'horizontal',
+    fadeEffect: {
+      crossFade: true
+    },
+    loop: true,
+    draggable: 'true',
+    autoplay: {
+      delay: 15000,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      prevEl: '.button-prev',
+      nextEl: '.button-next',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    }
+  });
+  
+  // CAROUSEL CLASSES SLIDER
+  var swiper = new Swiper('.carousel-classes', {
+    slidesPerView: '4',
+    spaceBetween: 30,
+    loop: 'true',
+    draggable: 'true',
+    navigation: {
+      prevEl: '.button-prev1',
+      nextEl: '.button-next1',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+	   breakpoints: {
+      640: {
+        slidesPerView: 1,
+        spaceBetween: 15,
+      },
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 30,
+      },
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+      },
+    }
+  });
+  
+
 
   // COUNTER
   $(document).scroll(function () {
