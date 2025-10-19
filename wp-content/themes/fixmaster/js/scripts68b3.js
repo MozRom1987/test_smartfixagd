@@ -98,7 +98,7 @@
 
   // MAIN SLIDER
   var swiper = new Swiper('.main-slider', {
-    lazy: true, // <-- DODAJ TĘ LINIĘ
+    lazy: true // <-- DODAJ TĘ LINIĘ
     slidesPerView: '1',
     spaceBetween: 0,
     speed: 1000,
