@@ -99,28 +99,32 @@
   // MAIN SLIDER
   // Kod, który musisz ZASTĄPIĆ w pliku scripts68b3.js
 
+// POCZĄTEK KODU DO WKLEJENIA (ZASTĄP NIM STARY KOD SWIPERA)
+
 var mainSlider = new Swiper('.main-slider', {
-    // Te dwie opcje włączają poprawne leniwe ładowanie
+    // Opcje leniwego ładowania
     lazy: true,
     preloadImages: false,
 
-    // Reszta opcji pozostaje bez zmian
+    // Standardowe opcje slidera
     slidesPerView: 1,
     loop: true,
     navigation: {
         nextEl: '.button-next',
         prevEl: '.button-prev',
     },
+
+    // Ta nowa sekcja naprawia ładowanie obrazków tła
     on: {
-        init: function () {
-            // Ta funkcja zapewnia płynne działanie animacji
-            var swiper = this;
-            setTimeout(function () {
-                swiper.update();
-            }, 500);
+        lazyImageReady: function (slideEl, imageEl) {
+            var bg = $(imageEl).data('src');
+            $(imageEl).css('background-image', 'url(' + bg + ')');
+            $(imageEl).removeClass('swiper-lazy').addClass('swiper-lazy-loaded');
         }
     }
 });
+
+// KONIEC KODU DO WKLEJENIA
   
   // CAROUSEL CLASSES SLIDER
   var swiper = new Swiper('.carousel-classes', {
