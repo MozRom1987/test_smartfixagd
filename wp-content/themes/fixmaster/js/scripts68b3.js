@@ -99,37 +99,16 @@
   // MAIN SLIDER
   // Kod, który musisz ZASTĄPIĆ w pliku scripts68b3.js
 
-// POCZĄTEK KODU DO WKLEJENIA (ZASTĄP NIM STARY KOD SWIPERA)
-
 var mainSlider = new Swiper('.main-slider', {
-    // Opcje leniwego ładowania
     lazy: true,
     preloadImages: false,
-
-    // Standardowe opcje slidera
     slidesPerView: 1,
     loop: true,
     navigation: {
         nextEl: '.button-next',
         prevEl: '.button-prev',
     },
-
-    // Ta NOWA, POPRAWIONA sekcja poprawnie ładuje obrazki tła
-    on: {
-        lazyImageReady: function (slideEl, imageEl) {
-            // Pobieramy ścieżkę do obrazka z atrybutu data-src
-            const imageUrl = imageEl.getAttribute('data-src');
-            if (imageUrl) {
-                // Ustawiamy obrazek jako tło i usuwamy klasy lazy
-                imageEl.style.backgroundImage = 'url(' + imageUrl + ')';
-                imageEl.classList.remove('swiper-lazy');
-                imageEl.classList.add('swiper-lazy-loaded');
-            }
-        }
-    }
 });
-
-// KONIEC KODU DO WKLEJENIA
   
   // CAROUSEL CLASSES SLIDER
   var swiper = new Swiper('.carousel-classes', {
