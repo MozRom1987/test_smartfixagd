@@ -4916,7 +4916,60 @@ header.page-header {
     "closes": "22:00"
   }]
 }
-</script></head>
+</script>
+<style>
+/* --- START: Kompletne uproszczenia dla wersji mobilnej --- */
+
+/* Używamy 992px jako punktu przerwania (tablety i telefony) */
+@media (max-width: 992px) {
+
+  /* --- 1. UPROSZCZENIE SLIDERA --- */
+  /* Zachowujemy pierwszy slajd, ale ukrywamy resztę */
+  .swiper-slide:not(:first-child) {
+    display: none !important;
+  }
+
+  /* Ukrywamy strzałki nawigacyjne slidera */
+  .slider .button-prev,
+  .slider .button-next {
+    display: none !important;
+  }
+
+  /* Wyłączamy animację zoom-in na pierwszym slajdzie */
+  .main-slider .swiper-slide.swiper-slide-active .slide-image {
+    transform: scale(1) !important;
+    transition: none !important;
+  }
+
+  /* --- 2. WYŁĄCZENIE INNYCH CIĘŻKICH ELEMENTÓW --- */
+  /* Wyłączamy animacje "WOW.js", aby nie obciążały procesora */
+  .wow {
+    visibility: visible !important; 
+    animation-name: none !important;
+  }
+
+  /* Wyłączamy niestandardowy kursor (niepotrzebny na dotyku) */
+  #pointer-dot, #pointer-ring {
+    display: none !important;
+  }
+
+  /* Zamieniamy ciężkie tło wideo na prosty kolor */
+  .processs {
+    background-image: none !important;
+    background-color: #0066cc !important; 
+  }
+  
+  /* --- 3. POPRAWKI LAYOUTU --- */
+  /* Optymalizujemy marginesy, które mogły się rozjechać */
+  .col-xl-6.ort {
+    margin-top: 0px !important;
+  }
+
+}
+
+/* --- KONIEC: Uproszczenia dla wersji mobilnej --- */
+</style>
+</head>
 <body>
 <style>
 .bg-light {background: none;}

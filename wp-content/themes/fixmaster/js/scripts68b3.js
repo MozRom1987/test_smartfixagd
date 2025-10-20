@@ -96,23 +96,22 @@
   wow.init();
 
 
-  // MAIN SLIDER
-  // Kod, który musisz ZASTĄPIĆ w pliku scripts68b3.js
+// MAIN SLIDER - Uruchamiaj tylko na ekranach szerszych niż 992px (desktop)
+if ($(window).width() > 992) {
+  var mainSlider = new Swiper('.main-slider', {
+      // Te dwie opcje włączają poprawne leniwe ładowanie
+      lazy: true,
+      preloadImages: false,
 
-// Kod, który musisz ZASTĄPIĆ w pliku scripts68b3.js
-var mainSlider = new Swiper('.main-slider', {
-    // Te dwie opcje włączają poprawne leniwe ładowanie
-    lazy: true,
-    preloadImages: false,
-
-    // Reszta opcji pozostaje bez zmian
-    slidesPerView: 1,
-    loop: true,
-    navigation: {
-        nextEl: '.button-next',
-        prevEl: '.button-prev',
-    }
-});
+      // Reszta opcji pozostaje bez zmian
+      slidesPerView: 1,
+      loop: true,
+      navigation: {
+          nextEl: '.button-next',
+          prevEl: '.button-prev',
+      }
+  });
+}
   
   // CAROUSEL CLASSES SLIDER
   var swiper = new Swiper('.carousel-classes', {
