@@ -99,15 +99,19 @@
   // MAIN SLIDER
   // Kod, który musisz ZASTĄPIĆ w pliku scripts68b3.js
 
+// Kod, który musisz ZASTĄPIĆ w pliku scripts68b3.js
 var mainSlider = new Swiper('.main-slider', {
+    // Te dwie opcje włączają poprawne leniwe ładowanie
     lazy: true,
     preloadImages: false,
+
+    // Reszta opcji pozostaje bez zmian
     slidesPerView: 1,
     loop: true,
     navigation: {
         nextEl: '.button-next',
         prevEl: '.button-prev',
-    },
+    }
 });
   
   // CAROUSEL CLASSES SLIDER
