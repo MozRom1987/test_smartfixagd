@@ -114,12 +114,17 @@ var mainSlider = new Swiper('.main-slider', {
         prevEl: '.button-prev',
     },
 
-    // Ta nowa sekcja naprawia ładowanie obrazków tła
+    // Ta NOWA, POPRAWIONA sekcja poprawnie ładuje obrazki tła
     on: {
         lazyImageReady: function (slideEl, imageEl) {
-            var bg = $(imageEl).data('src');
-            $(imageEl).css('background-image', 'url(' + bg + ')');
-            $(imageEl).removeClass('swiper-lazy').addClass('swiper-lazy-loaded');
+            // Pobieramy ścieżkę do obrazka z atrybutu data-src
+            const imageUrl = imageEl.getAttribute('data-src');
+            if (imageUrl) {
+                // Ustawiamy obrazek jako tło i usuwamy klasy lazy
+                imageEl.style.backgroundImage = 'url(' + imageUrl + ')';
+                imageEl.classList.remove('swiper-lazy');
+                imageEl.classList.add('swiper-lazy-loaded');
+            }
         }
     }
 });
