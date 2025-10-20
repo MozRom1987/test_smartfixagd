@@ -97,31 +97,30 @@
 
 
   // MAIN SLIDER
-  var swiper = new Swiper('.main-slider', {
-    lazy: true, // <-- DODAJ TĘ LINIĘ
-    slidesPerView: '1',
-    spaceBetween: 0,
-    speed: 1000,
-    effect: 'fade',
-    direction: 'horizontal',
-    fadeEffect: {
-      crossFade: true
-    },
+  // Kod, który musisz ZASTĄPIĆ w pliku scripts68b3.js
+
+var mainSlider = new Swiper('.main-slider', {
+    // Te dwie opcje włączają poprawne leniwe ładowanie
+    lazy: true,
+    preloadImages: false,
+
+    // Reszta opcji pozostaje bez zmian
+    slidesPerView: 1,
     loop: true,
-    draggable: 'true',
-    autoplay: {
-      delay: 15000,
-      disableOnInteraction: false,
-    },
     navigation: {
-      prevEl: '.button-prev',
-      nextEl: '.button-next',
+        nextEl: '.button-next',
+        prevEl: '.button-prev',
     },
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
+    on: {
+        init: function () {
+            // Ta funkcja zapewnia płynne działanie animacji
+            var swiper = this;
+            setTimeout(function () {
+                swiper.update();
+            }, 500);
+        }
     }
-  });
+});
   
   // CAROUSEL CLASSES SLIDER
   var swiper = new Swiper('.carousel-classes', {
