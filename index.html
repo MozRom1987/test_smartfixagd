@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-<script>
-// ASYNCHRONICZNE CSS - NIE RUSZA RESZTY
-document.addEventListener('readystatechange', function() {
-    if (document.readyState === 'interactive') {
-        var links = document.querySelectorAll('link[rel="stylesheet"]');
-        links.forEach(function(link) {
-            link.media = 'print';
-            link.onload = function() { 
-                this.media = 'all'; 
-            };
-        });
-    }
-});
-</script>  
-<link as="style" href="wp-content/themes/fixmaster/css/style68b3_smartfix_polish.css" rel="preload"/><link as="style" href="wp-content/themes/fixmaster/css/bootstrap.min68b3.css?ver=1" rel="preload"/><link as="style" href="wp-content/themes/fixmaster/css/style68b3.css?ver=1" rel="preload"/><link as="style" href="wp-content/plugins/contact-form-7/includes/css/styles40df.css?ver=5.6" rel="preload"/>
+<!-- PRELOAD CSS - BEZPIECZNE -->
+<link rel="preload" href="wp-content/themes/fixmaster/css/style68b3_smartfix_polish.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="preload" href="wp-content/themes/fixmaster/css/bootstrap.min68b3.css?ver=1" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="preload" href="wp-content/themes/fixmaster/css/style68b3.css?ver=1" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="preload" href="wp-content/plugins/contact-form-7/includes/css/styles40df.css?ver=5.6" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="preload" href="wp-content/themes/fixmaster/css/swiper.min68b3.css?ver=1" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="preload" href="wp-content/themes/fixmaster/css/flaticon68b3.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="preload" href="wp-content/themes/fixmaster/custom68b3.css?ver=1" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<!-- FALLBACK -->
+<noscript>
+<link href="wp-content/themes/fixmaster/css/style68b3_smartfix_polish.css" rel="stylesheet">
+<link href="wp-content/themes/fixmaster/css/bootstrap.min68b3.css?ver=1" rel="stylesheet">
+<link href="wp-content/themes/fixmaster/css/style68b3.css?ver=1" rel="stylesheet">
+<link href="wp-content/plugins/contact-form-7/includes/css/styles40df.css?ver=5.6" rel="stylesheet">
+<link href="wp-content/themes/fixmaster/css/swiper.min68b3.css?ver=1" rel="stylesheet">
+<link href="wp-content/themes/fixmaster/css/flaticon68b3.css" rel="stylesheet">
+<link href="wp-content/themes/fixmaster/custom68b3.css?ver=1" rel="stylesheet">
+</noscript>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="max-image-preview:large" name="robots"/>
