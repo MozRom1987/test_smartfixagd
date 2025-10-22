@@ -7,6 +7,7 @@
 <!-- PRELOAD CZCIONKI Outfit - tylko potrzebne warianty -->
 <link rel="preload" href="wp-content/themes/fixmaster/css/fonts/outfit/outfit-v15-latin_latin-ext-700.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="wp-content/themes/fixmaster/css/fonts/outfit/outfit-v15-latin_latin-ext-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="wp-content/themes/fixmaster/css/fonts/flaticona1f9a1f9.woff2?1895e337cdf1a9a72d08e55e17b16599" as="font" type="font/woff2" crossorigin>
 <style>
 /* KRITYCZNY CSS - zoptymalizowany dla LCP */
 .navbar { 
@@ -72,7 +73,8 @@ body, html {
 /* OPTYMALIZACJA CZCIONKI IKON - ZAPOBIEGA OPÓŹNIENIOM */
 @font-face {
     font-family: 'Flaticon';
-    src: url('wp-content/themes/fixmaster/fonts/Flaticon.woff2') format('woff2');
+    src: url('wp-content/themes/fixmaster/css/fonts/flaticona1f9a1f9.woff2?1895e337cdf1a9a72d08e55e17b16599') format('woff2'),
+         url('wp-content/themes/fixmaster/css/fonts/flaticona1f9a1f9.woff?1895e337cdf1a9a72d08e55e17b16599') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: block;
@@ -5037,7 +5039,31 @@ header.page-header {
     "closes": "22:00"
   }]
 }
-</script></head>
+</script>
+<script>
+// Delikatne ładowanie ikon - bez blokowania renderowania
+document.addEventListener('DOMContentLoaded', function() {
+    // Oznacz że czcionka ikon została załadowana
+    setTimeout(function() {
+        document.documentElement.classList.add('icons-loaded');
+    }, 50);
+});
+</script>
+
+<style>
+/* Płynne pojawianie się ikon */
+.icons-loaded [class^="flaticon-"], 
+.icons-loaded [class*=" flaticon-"] {
+    opacity: 1;
+    transition: opacity 0.2s ease;
+}
+
+/* Domyślnie ikony są lekko przezroczyste */
+[class^="flaticon-"], [class*=" flaticon-"] {
+    opacity: 0.9;
+}
+</style>
+</head>
 <body>
 <style>
 .bg-light {background: none;}
