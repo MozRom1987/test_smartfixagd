@@ -8,8 +8,33 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<style></style>
 <style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+<script>
+// Zmiana CSS na nieblokujące renderowanie
+function loadCSS(href) {
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = href;
+    link.media = 'print'; // Nie blokuje renderowania
+    link.onload = function() { 
+        this.media = 'all'; // Zmienia na all po załadowaniu
+    };
+    document.head.appendChild(link);
+}
+
+// Ładuj wszystkie CSS asynchronicznie
+var cssFiles = [
+    'wp-content/themes/fixmaster/css/style68b3_smartfix_polish.css',
+    'wp-content/themes/fixmaster/css/bootstrap.min68b3.css?ver=1',
+    'wp-content/themes/fixmaster/css/style68b3.css?ver=1',
+    'wp-content/plugins/contact-form-7/includes/css/styles40df.css?ver=5.6',
+    'wp-content/themes/fixmaster/css/swiper.min68b3.css?ver=1',
+    'wp-content/themes/fixmaster/css/flaticon68b3.css',
+    'wp-content/themes/fixmaster/custom68b3.css?ver=1'
+];
+
+cssFiles.forEach(loadCSS);
+</script>
 <script>
 // Optymalizacja obrazków bez zmiany CSS
 document.addEventListener('DOMContentLoaded', function() {
