@@ -1,155 +1,9 @@
 <!DOCTYPE html>
 <html lang="pl">
-<head>
+<head><link as="style" href="wp-content/themes/fixmaster/css/style68b3_smartfix_polish.css" rel="preload"/><link as="style" href="wp-content/themes/fixmaster/css/bootstrap.min68b3.css?ver=1" rel="preload"/><link as="style" href="wp-content/themes/fixmaster/css/style68b3.css?ver=1" rel="preload"/><link as="style" href="wp-content/plugins/contact-form-7/includes/css/styles40df.css?ver=5.6" rel="preload"/>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="max-image-preview:large" name="robots"/>
-<link rel="preload" href="wp-content/uploads/2023/10/slider-fixmaster-1-mobile.webp" as="image" media="(max-width: 768px)" fetchpriority="high">
-<!-- PRELOAD CZCIONKI Outfit - tylko potrzebne warianty -->
-<link rel="preload" href="wp-content/themes/fixmaster/css/fonts/outfit/outfit-v15-latin_latin-ext-700.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="wp-content/themes/fixmaster/css/fonts/outfit/outfit-v15-latin_latin-ext-regular.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="wp-content/themes/fixmaster/css/fonts/flaticona1f9a1f9.woff2?1895e337cdf1a9a72d08e55e17b16599" as="font" type="font/woff2" crossorigin>
-<style>
-/* KRITYCZNY CSS DLA MOBILE - tylko dla slidera */
-@media (max-width: 768px) {
-    .slider { 
-        position: relative; 
-        min-height: 100vh;
-        overflow: hidden;
-    }
-    .slider img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: 1;
-    }
-    .slider .container {
-        position: relative;
-        z-index: 2;
-    }
-}
-</style>
-<style>
-/* KRITYCZNY CSS - zoptymalizowany dla LCP */
-.navbar { 
-    position: fixed; 
-    top: 0; 
-    left: 0; 
-    width: 100%; 
-    z-index: 1000; 
-    background: transparent; 
-}
-.navbar .logo img { 
-    height: 50px; 
-    width: auto; 
-}
-.slider { 
-    position: relative; 
-    min-height: 100vh;
-}
-.main-slider { 
-    position: relative;
-}
-body, html { 
-    margin: 0; 
-    padding: 0; 
-    font-family: Outfit, sans-serif; 
-}
-.container { 
-    width: 100%; 
-    max-width: 1200px; 
-    margin: 0 auto; 
-    padding: 0 15px;
-}
-.loadwraps { 
-    display: none; 
-}
-
-/* STYLE DLA H1 - ZOPTYMALIZOWANE DLA SZYBKIEGO RENDEROWANIA */
-.slider .container {
-    position: relative;
-    z-index: 2;
-}
-.slider .container h1 {
-    font-family: Outfit, sans-serif;
-    color: #ffffff;
-    font-weight: 700;
-    line-height: 1.2;
-    font-size: clamp(2rem, 5vw, 4rem);
-    margin: 0;
-    padding: 20px 0;
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: none !important;
-}
-
-.slider .container p {
-    font-family: Outfit, sans-serif;
-    color: #ffffff;
-    line-height: 1.6;
-    margin: 0;
-    padding: 10px 0;
-}
-
-/* OPTYMALIZACJA CZCIONKI IKON - ZAPOBIEGA OPÓŹNIENIOM */
-@font-face {
-    font-family: 'Flaticon';
-    src: url('wp-content/themes/fixmaster/css/fonts/flaticona1f9a1f9.woff2?1895e337cdf1a9a72d08e55e17b16599') format('woff2'),
-         url('wp-content/themes/fixmaster/css/fonts/flaticona1f9a1f9.woff?1895e337cdf1a9a72d08e55e17b16599') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: block;
-}
-
-/* Rezerwowanie miejsca dla ikon - zapobiega przesunięciom */
-[class^="flaticon-"], [class*=" flaticon-"] {
-    display: inline-block;
-    min-width: 1em;
-    min-height: 1em;
-    line-height: 1;
-    visibility: visible !important;
-}
-
-/* Style tekstu - jeśli nie psują layoutu */
-.slider h1, .slider p { 
-    font-family: Outfit, sans-serif;
-    color: #ffffff;
-}
-
-/* ZAPOBIEGANIE FOUC */
-body { 
-    opacity: 1; 
-    visibility: visible; 
-}
-
-/* Dodatkowe style dla lepszego LCP */
-* { 
-    box-sizing: border-box; 
-}
-</style>
-<link rel="preload" href="wp-content/uploads/2023/10/slider-fixmaster-1.webp" as="image" fetchpriority="high">
-<!-- PRELOAD CSS - BEZPIECZNE -->
-<link rel="preload" href="wp-content/themes/fixmaster/css/style68b3_smartfix_polish.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<link rel="preload" href="wp-content/themes/fixmaster/css/bootstrap.min68b3.css?ver=1" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<link rel="preload" href="wp-content/themes/fixmaster/css/style68b3.css?ver=1" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<link rel="preload" href="wp-content/plugins/contact-form-7/includes/css/styles40df.css?ver=5.6" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<link rel="preload" href="wp-content/themes/fixmaster/css/swiper.min68b3.css?ver=1" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<link rel="preload" href="wp-content/themes/fixmaster/css/flaticon68b3.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<link rel="preload" href="wp-content/themes/fixmaster/custom68b3.css?ver=1" as="style" onload="this.onload=null;this.rel='stylesheet'">
-
-<!-- FALLBACK -->
-<noscript>
-<link href="wp-content/themes/fixmaster/css/style68b3_smartfix_polish.css" rel="stylesheet">
-<link href="wp-content/themes/fixmaster/css/bootstrap.min68b3.css?ver=1" rel="stylesheet">
-<link href="wp-content/themes/fixmaster/css/style68b3.css?ver=1" rel="stylesheet">
-<link href="wp-content/plugins/contact-form-7/includes/css/styles40df.css?ver=5.6" rel="stylesheet">
-<link href="wp-content/themes/fixmaster/css/swiper.min68b3.css?ver=1" rel="stylesheet">
-<link href="wp-content/themes/fixmaster/css/flaticon68b3.css" rel="stylesheet">
-<link href="wp-content/themes/fixmaster/custom68b3.css?ver=1" rel="stylesheet">
-</noscript>
 <style></style>
 <style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
 <script>
@@ -5063,31 +4917,7 @@ header.page-header {
     "closes": "22:00"
   }]
 }
-</script>
-<script>
-// Delikatne ładowanie ikon - bez blokowania renderowania
-document.addEventListener('DOMContentLoaded', function() {
-    // Oznacz że czcionka ikon została załadowana
-    setTimeout(function() {
-        document.documentElement.classList.add('icons-loaded');
-    }, 50);
-});
-</script>
-
-<style>
-/* Płynne pojawianie się ikon */
-.icons-loaded [class^="flaticon-"], 
-.icons-loaded [class*=" flaticon-"] {
-    opacity: 1;
-    transition: opacity 0.2s ease;
-}
-
-/* Domyślnie ikony są lekko przezroczyste */
-[class^="flaticon-"], [class*=" flaticon-"] {
-    opacity: 0.9;
-}
-</style>
-</head>
+</script></head>
 <body>
 <style>
 .bg-light {background: none;}
@@ -5996,37 +5826,243 @@ var wpcf7 = {"api":{"root":"https:\/\/garantiwebtasarim.com\/wordpress\/fixmaste
 <script>
         init_pointer({
         })
-    </script> 
-<!-- DIAGNOSTYKA LCP -->
+    </script>
 <script>
-// Monitoruj LCP w czasie rzeczywistym
-new PerformanceObserver((entryList) => {
-    const entries = entryList.getEntries();
-    const lastEntry = entries[entries.length - 1];
-    console.log('🚀 LCP Element:', lastEntry.element);
-    console.log('⏱️ LCP Time:', Math.round(lastEntry.startTime), 'ms');
-    console.log('📏 LCP Size:', lastEntry.size);
-}).observe({type: 'largest-contentful-paint', buffered: true});
-
-// Sprawdź kiedy tekst jest renderowany
-document.addEventListener('DOMContentLoaded', function() {
-    const h1 = document.querySelector('.slider h1');
-    const h1Text = h1?.textContent || h1?.innerText;
-    console.log('✅ H1 rendered immediately:', h1Text);
-    console.log('🕒 DOM Ready at:', performance.now().toFixed(0), 'ms');
-});
-</script>
-<script>
-// Sprawdź czy mobile
-if (window.innerWidth <= 768) {
-    console.log('📱 Mobile detected - LCP optimization active');
+// COMPREHENSIVE PAGESPEED MOBILE PERFORMANCE MONITOR
+(function() {
+    'use strict';
     
-    new PerformanceObserver((entryList) => {
+    // Konfiguracja - warunki Pagespeed Mobile
+    const config = {
+        networkThrottling: 'Slow 3G',      // 400ms RTT, 400kbps throughput
+        cpuThrottling: 4,                  // 4x slowdown
+        screen: 'Mobile M3',               // 360x640, 4x CPU slowdown
+        storage: '20MB'                    // Limited storage
+    };
+    
+    console.log('📱 PAGESPEED MOBILE EMULATION ACTIVATED');
+    console.log('⚙️ Config:', config);
+    
+    // Performance Metrics Collector
+    const metrics = {
+        LCP: { value: 0, element: null },
+        FCP: { value: 0 },
+        CLS: { value: 0 },
+        FID: { value: 0 },
+        TBT: { value: 0 }, // Total Blocking Time
+        TTI: { value: 0 }, // Time to Interactive
+        TTFB: { value: 0 } // Time to First Byte
+    };
+    
+    // Monitor LCP (Largest Contentful Paint)
+    const lcpObserver = new PerformanceObserver((entryList) => {
         const entries = entryList.getEntries();
         const lastEntry = entries[entries.length - 1];
-        console.log('📱 MOBILE LCP:', Math.round(lastEntry.startTime), 'ms');
-    }).observe({type: 'largest-contentful-paint', buffered: true});
-}
+        
+        metrics.LCP.value = lastEntry.startTime;
+        metrics.LCP.element = lastEntry.element;
+        
+        console.log('🚀 LCP:', {
+            time: Math.round(lastEntry.startTime) + 'ms',
+            element: lastEntry.element?.tagName,
+            size: lastEntry.size,
+            url: lastEntry.element?.src || lastEntry.element?.innerText?.substring(0, 50)
+        });
+        
+        // Pagespeed scoring
+        let lcpScore = 'POOR';
+        if (lastEntry.startTime < 2500) lcpScore = 'GOOD';
+        if (lastEntry.startTime < 1200) lcpScore = 'EXCELLENT';
+        
+        console.log('📊 LCP Score:', lcpScore);
+    });
+    lcpObserver.observe({type: 'largest-contentful-paint', buffered: true});
+    
+    // Monitor FCP (First Contentful Paint)
+    const fcpObserver = new PerformanceObserver((entryList) => {
+        const entries = entryList.getEntries();
+        metrics.FCP.value = entries[0].startTime;
+        console.log('🎨 FCP:', Math.round(entries[0].startTime) + 'ms');
+    });
+    fcpObserver.observe({type: 'paint', buffered: true});
+    
+    // Monitor CLS (Cumulative Layout Shift)
+    let clsValue = 0;
+    const clsObserver = new PerformanceObserver((entryList) => {
+        for (const entry of entryList.getEntries()) {
+            if (!entry.hadRecentInput) {
+                clsValue += entry.value;
+                metrics.CLS.value = clsValue;
+            }
+        }
+        console.log('📐 CLS:', clsValue.toFixed(4));
+        
+        // Pagespeed scoring
+        let clsScore = 'POOR';
+        if (clsValue < 0.25) clsScore = 'GOOD';
+        if (clsValue < 0.1) clsScore = 'EXCELLENT';
+        
+        console.log('📊 CLS Score:', clsScore);
+    });
+    clsObserver.observe({type: 'layout-shift', buffered: true});
+    
+    // Monitor FID (First Input Delay)
+    let firstInputTime = 0;
+    let firstInputDelay = 0;
+    
+    const fidObserver = new PerformanceObserver((entryList) => {
+        const entries = entryList.getEntries();
+        entries.forEach(entry => {
+            if (entry.entryType === 'first-input') {
+                firstInputTime = entry.startTime;
+                firstInputDelay = entry.processingStart - entry.startTime;
+                metrics.FID.value = firstInputDelay;
+                
+                console.log('⚡ FID:', Math.round(firstInputDelay) + 'ms');
+                
+                // Pagespeed scoring
+                let fidScore = 'POOR';
+                if (firstInputDelay < 100) fidScore = 'GOOD';
+                if (firstInputDelay < 50) fidScore = 'EXCELLENT';
+                
+                console.log('📊 FID Score:', fidScore);
+            }
+        });
+    });
+    fidObserver.observe({type: 'first-input', buffered: true});
+    
+    // Monitor TTFB (Time to First Byte)
+    const navigationObserver = new PerformanceObserver((entryList) => {
+        const entries = entryList.getEntries();
+        const navEntry = entries[0];
+        
+        metrics.TTFB.value = navEntry.responseStart;
+        metrics.TTI.value = navEntry.domInteractive;
+        
+        console.log('🌐 TTFB:', Math.round(navEntry.responseStart) + 'ms');
+        console.log('🔄 TTI:', Math.round(navEntry.domInteractive) + 'ms');
+        
+        // Pagespeed scoring
+        let ttfbScore = 'POOR';
+        if (navEntry.responseStart < 600) ttfbScore = 'GOOD';
+        if (navEntry.responseStart < 200) ttfbScore = 'EXCELLENT';
+        
+        console.log('📊 TTFB Score:', ttfbScore);
+    });
+    navigationObserver.observe({type: 'navigation', buffered: true});
+    
+    // Monitor Total Blocking Time
+    let totalBlockingTime = 0;
+    const longTaskObserver = new PerformanceObserver((entryList) => {
+        for (const entry of entryList.getEntries()) {
+            // Tasks longer than 50ms contribute to TBT
+            const blockingTime = entry.duration - 50;
+            if (blockingTime > 0) {
+                totalBlockingTime += blockingTime;
+            }
+        }
+        metrics.TBT.value = totalBlockingTime;
+        console.log('🔒 Total Blocking Time:', Math.round(totalBlockingTime) + 'ms');
+    });
+    longTaskObserver.observe({type: 'longtask', buffered: true});
+    
+    // Resource Timing - analiza ładowania zasobów
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            const resources = performance.getEntriesByType('resource');
+            console.log('📦 Resource Loading Analysis:');
+            
+            resources.forEach(resource => {
+                if (resource.duration > 1000) { // Pokaż tylko wolne zasoby
+                    console.log('🐌 Slow resource:', {
+                        name: resource.name,
+                        duration: Math.round(resource.duration) + 'ms',
+                        size: resource.transferSize ? Math.round(resource.transferSize/1024) + 'KB' : 'N/A'
+                    });
+                }
+            });
+        }, 1000);
+    });
+    
+    // Mobile-specific checks
+    function checkMobileOptimizations() {
+        console.log('📱 Mobile Optimization Check:');
+        
+        // Check viewport
+        const viewport = document.querySelector('meta[name="viewport"]');
+        if (viewport && viewport.content.includes('width=device-width')) {
+            console.log('✅ Viewport: OK');
+        } else {
+            console.log('❌ Viewport: Missing or incorrect');
+        }
+        
+        // Check tap targets
+        const tapTargets = document.querySelectorAll('a, button, [onclick]');
+        let smallTapTargets = 0;
+        tapTargets.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            const area = rect.width * rect.height;
+            if (area < 2400) { // 48x48px minimum
+                smallTapTargets++;
+            }
+        });
+        if (smallTapTargets > 0) {
+            console.log(`⚠️ Small tap targets: ${smallTapTargets} elements`);
+        } else {
+            console.log('✅ Tap targets: OK');
+        }
+        
+        // Check font sizes
+        const bodyStyle = window.getComputedStyle(document.body);
+        const fontSize = parseInt(bodyStyle.fontSize);
+        if (fontSize >= 16) {
+            console.log('✅ Font size: OK (' + fontSize + 'px)');
+        } else {
+            console.log('❌ Font size: Too small (' + fontSize + 'px)');
+        }
+    }
+    
+    // Final report
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            console.log('='.repeat(50));
+            console.log('📊 FINAL PAGESPEED MOBILE REPORT');
+            console.log('='.repeat(50));
+            
+            console.log('⏱️ Core Web Vitals:');
+            console.log('  LCP:', Math.round(metrics.LCP.value) + 'ms');
+            console.log('  FID:', Math.round(metrics.FID.value) + 'ms');
+            console.log('  CLS:', metrics.CLS.value.toFixed(4));
+            
+            console.log('📈 Performance Metrics:');
+            console.log('  FCP:', Math.round(metrics.FCP.value) + 'ms');
+            console.log('  TTFB:', Math.round(metrics.TTFB.value) + 'ms');
+            console.log('  TTI:', Math.round(metrics.TTI.value) + 'ms');
+            console.log('  TBT:', Math.round(metrics.TBT.value) + 'ms');
+            
+            // Estimated Pagespeed Score
+            let estimatedScore = 0;
+            if (metrics.LCP.value < 2500) estimatedScore += 25;
+            if (metrics.FID.value < 100) estimatedScore += 25;
+            if (metrics.CLS.value < 0.1) estimatedScore += 25;
+            if (metrics.FCP.value < 1500) estimatedScore += 25;
+            
+            console.log('🎯 Estimated Pagespeed Score:', estimatedScore + '/100');
+            
+            checkMobileOptimizations();
+            
+            console.log('='.repeat(50));
+            
+        }, 3000); // Wait for all metrics to stabilize
+    });
+    
+    // Simulate mobile conditions warning
+    console.log('%c⚠️ REMEMBER: This is real device monitoring. For exact Pagespeed conditions:', 'color: orange; font-size: 14px;');
+    console.log('%c- Use Chrome DevTools → Performance → Throttling: Slow 3G', 'color: orange;');
+    console.log('%c- Use Chrome DevTools → Performance → CPU: 4x slowdown', 'color: orange;');
+    console.log('%c- Test on real mobile device with 3G connection', 'color: orange;');
+    
+})();
 </script>
 </body>
 </html>
