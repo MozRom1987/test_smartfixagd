@@ -6107,5 +6107,124 @@ var wpcf7 = {"api":{"root":"https:\/\/garantiwebtasarim.com\/wordpress\/fixmaste
     
 })();
 </script>
+<script>
+// PAGESPEED PERFORMANCE DIAGNOSTICS - RZECZYWISTE PROBLEMY
+(function() {
+    'use strict';
+    
+    console.log('%c🔍 PAGESPEED PERFORMANCE DIAGNOSTICS', 'color: #e74c3c; font-size: 16px; font-weight: bold;');
+    
+    // Collect critical performance issues
+    const issues = [];
+    
+    // 1. Check render-blocking CSS
+    const cssLinks = document.querySelectorAll('link[rel="stylesheet"]:not([media="print"])');
+    cssLinks.forEach(link => {
+        if (!link.disabled && link.href && !link.href.includes('fonts.googleapis.com')) {
+            issues.push({
+                type: 'Render-blocking CSS',
+                file: link.href.split('/').pop(),
+                severity: 'HIGH',
+                fix: 'Add media="print" and onload="this.media=\'all\'"'
+            });
+        }
+    });
+    
+    // 2. Check images without optimization
+    const images = document.querySelectorAll('img');
+    images.forEach(img => {
+        const problems = [];
+        if (!img.loading) problems.push('missing loading="lazy"');
+        if (!img.decoding) problems.push('missing decoding="async"');
+        if (!img.width || !img.height) problems.push('missing width/height');
+        if (!img.srcset && img.src && !img.src.includes('.webp')) problems.push('no srcset & not WebP');
+        
+        if (problems.length > 0) {
+            issues.push({
+                type: 'Unoptimized image',
+                file: img.src.split('/').pop() || 'inline',
+                problems: problems,
+                severity: 'MEDIUM',
+                fix: 'Add loading="lazy", decoding="async", width, height, srcset'
+            });
+        }
+    });
+    
+    // 3. Check fonts
+    const fontLinks = document.querySelectorAll('link[rel="stylesheet"][href*="fonts"]');
+    fontLinks.forEach(link => {
+        issues.push({
+            type: 'Render-blocking font',
+            file: link.href.split('/').pop(),
+            severity: 'MEDIUM', 
+            fix: 'Preload font or use font-display: swap'
+        });
+    });
+    
+    // 4. Check large DOM size
+    const allElements = document.querySelectorAll('*');
+    if (allElements.length > 1500) {
+        issues.push({
+            type: 'Large DOM size',
+            count: allElements.length + ' elements',
+            severity: 'LOW',
+            fix: 'Reduce DOM elements to under 1500'
+        });
+    }
+    
+    // 5. Check unused CSS/JS
+    const totalResources = performance.getEntriesByType('resource').length;
+    if (totalResources > 20) {
+        issues.push({
+            type: 'Too many resources',
+            count: totalResources + ' requests',
+            severity: 'MEDIUM',
+            fix: 'Combine and minify CSS/JS'
+        });
+    }
+    
+    // Display results
+    console.log('%c📊 FOUND ' + issues.length + ' PERFORMANCE ISSUES:', 'color: #e74c3c; font-weight: bold;');
+    
+    issues.forEach(issue => {
+        console.log(
+            '%c' + issue.severity + '%c ' + issue.type + 
+            ' - ' + (issue.file || issue.count || '') +
+            ' - FIX: ' + issue.fix,
+            'color: ' + (issue.severity === 'HIGH' ? '#e74c3c' : issue.severity === 'MEDIUM' ? '#f39c12' : '#f1c40f') + '; font-weight: bold;',
+            'color: #333;'
+        );
+        
+        if (issue.problems) {
+            issue.problems.forEach(problem => {
+                console.log('   • ' + problem);
+            });
+        }
+    });
+    
+    // Performance metrics
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            const perfEntries = performance.getEntriesByType('navigation')[0];
+            const resources = performance.getEntriesByType('resource');
+            
+            console.log('%c⏱️ PERFORMANCE METRICS:', 'color: #2c3e50; font-weight: bold;');
+            console.log('   DOM Content Loaded: ' + Math.round(perfEntries.domContentLoadedEventEnd) + 'ms');
+            console.log('   Full Load: ' + Math.round(perfEntries.loadEventEnd) + 'ms');
+            console.log('   Total Resources: ' + resources.length);
+            
+            // Analyze slow resources
+            const slowResources = resources.filter(r => r.duration > 1000);
+            if (slowResources.length > 0) {
+                console.log('%c🐌 SLOW RESOURCES (>1s):', 'color: #e74c3c; font-weight: bold;');
+                slowResources.forEach(resource => {
+                    console.log('   • ' + resource.name.split('/').pop() + ': ' + Math.round(resource.duration) + 'ms');
+                });
+            }
+        }, 1000);
+    });
+    
+})();
+</script>
 </body>
 </html>
