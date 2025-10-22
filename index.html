@@ -5033,7 +5033,7 @@ p.ic {
 </div>
 <aside class="side-widget">
 <div class="inner">
-<div class="logo"> <a href="index.html"><img alt="Image" loading="lazy" src="wp-content/uploads/2023/10/fixmaster-logo-7.webp"/></a> </div>
+<div class="logo"> <a href="index.html"><img alt="Image" loading="lazy" src="wp-content/uploads/2023/10/fixmaster-logo-7.webp" width="214" height="76"/></a> </div>
 <div class="hide-mobile">
 <div class="or">
 <h2 class="h2-baslik-hizmetler-2"> Dane Kontaktowe </h2>
@@ -5088,8 +5088,8 @@ p.ic {
 <nav class="navbar navbar-expand-md navbar-light bg-light">
 <div class="container">
 <div class="logo"> <a href="index.html">
-<img alt="Image" class="h" loading="lazy" src="wp-content/uploads/2023/10/fixmaster-logo-6.webp"/>
-<img alt="Image" class="s" loading="lazy" src="wp-content/uploads/2023/10/fixmaster-logo-7.webp"/>
+<img alt="Image" class="h" loading="eager" src="wp-content/uploads/2023/10/fixmaster-logo-6.webp" width="214" height="76">
+<img alt="Image" class="s" loading="lazy" src="wp-content/uploads/2023/10/fixmaster-logo-7.webp" title="Image" width="214" height="76">
 </a>
 </div>
 <div class="site-menu">
@@ -6345,6 +6345,38 @@ window.addEventListener('load', function() {
     // Sprawdź czy pierwszy obrazek ma preload
     const firstImage = document.querySelector('img[fetchpriority="high"]');
     console.log(`🚀 First image preloaded: ${firstImage ? 'YES' : 'NO'}`);
+});
+</script>
+<script>
+// FINALNA DIAGNOSTYKA OPTYMALIZACJI
+window.addEventListener('load', function() {
+    console.log('🎯 FINAL OPTIMIZATION CHECK:');
+    
+    // Sprawdź preload
+    const preloadLinks = document.querySelectorAll('link[rel="preload"]');
+    const imagePreloads = Array.from(preloadLinks).filter(link => 
+        link.as === 'image' && link.href.includes('slider-fixmaster-1')
+    );
+    console.log(`📦 Image preloads: ${imagePreloads.length}`);
+    
+    // Sprawdź wymiary obrazków
+    const images = document.querySelectorAll('img');
+    const imagesWithDimensions = Array.from(images).filter(img => 
+        img.hasAttribute('width') && img.hasAttribute('height')
+    );
+    console.log(`📐 Images with dimensions: ${imagesWithDimensions.length}/${images.length}`);
+    
+    // Sprawdź lazy loading
+    const lazyImages = Array.from(images).filter(img => 
+        img.loading === 'lazy'
+    );
+    console.log(`⚡ Lazy loaded images: ${lazyImages.length}/${images.length}`);
+    
+    if (imagePreloads.length > 0 && imagesWithDimensions.length === images.length) {
+        console.log('✅ ALL OPTIMIZATIONS SUCCESSFUL!');
+    } else {
+        console.log('❌ Some optimizations missing');
+    }
 });
 </script>
 </body>
