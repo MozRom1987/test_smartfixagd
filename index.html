@@ -4,6 +4,10 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="max-image-preview:large" name="robots"/>
+<meta name="theme-color" content="#ff6b00">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <style></style>
 <style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
 <script>
@@ -5828,239 +5832,278 @@ var wpcf7 = {"api":{"root":"https:\/\/garantiwebtasarim.com\/wordpress\/fixmaste
         })
     </script>
 <script>
-// COMPREHENSIVE PAGESPEED MOBILE PERFORMANCE MONITOR
+// ADVANCED PAGESPEED MOBILE SIMULATION & DIAGNOSTICS
 (function() {
     'use strict';
     
-    // Konfiguracja - warunki Pagespeed Mobile
-    const config = {
-        networkThrottling: 'Slow 3G',      // 400ms RTT, 400kbps throughput
-        cpuThrottling: 4,                  // 4x slowdown
-        screen: 'Mobile M3',               // 360x640, 4x CPU slowdown
-        storage: '20MB'                    // Limited storage
-    };
-    
-    console.log('📱 PAGESPEED MOBILE EMULATION ACTIVATED');
-    console.log('⚙️ Config:', config);
+    console.log('%c📱 PAGESPEED MOBILE SIMULATION - Warunki testowe:', 'color: #ff6b00; font-size: 16px; font-weight: bold;');
+    console.log('⚡ Network: Slow 3G (400ms RTT, 400kbps)');
+    console.log('💻 CPU: 4x slowdown (Moto G4)');
+    console.log('📱 Device: Mobile M3 (360x640)');
+    console.log('⏱️ Storage: 20MB limit');
     
     // Performance Metrics Collector
     const metrics = {
-        LCP: { value: 0, element: null },
-        FCP: { value: 0 },
-        CLS: { value: 0 },
-        FID: { value: 0 },
-        TBT: { value: 0 }, // Total Blocking Time
-        TTI: { value: 0 }, // Time to Interactive
-        TTFB: { value: 0 } // Time to First Byte
+        LCP: { value: 0, element: null, timing: 0 },
+        FCP: { value: 0, timing: 0 },
+        CLS: { value: 0, entries: [] },
+        FID: { value: 0, target: null },
+        TBT: { value: 0, tasks: [] },
+        TTI: { value: 0 },
+        TTFB: { value: 0 },
+        SpeedIndex: { value: 0 }
     };
     
-    // Monitor LCP (Largest Contentful Paint)
+    // Symulacja warunków Pagespeed
+    function simulatePagespeedConditions() {
+        // Symulacja wolnego CPU - ograniczanie częstotliwości
+        const originalRAF = window.requestAnimationFrame;
+        window.requestAnimationFrame = function(callback) {
+            return originalRAF(function(timestamp) {
+                // 4x CPU slowdown
+                callback(timestamp / 4);
+            });
+        };
+        
+        // Symulacja wolnego network - opóźnienie ładowania zasobów
+        const resources = performance.getEntriesByType('resource');
+        resources.forEach(resource => {
+            if (resource.duration < 1000) {
+                metrics.TTFB.value = Math.max(metrics.TTFB.value, resource.responseStart + 400); // +400ms RTT
+            }
+        });
+    }
+    
+    // Zaawansowany monitoring LCP
+    let lcpCandidates = [];
     const lcpObserver = new PerformanceObserver((entryList) => {
         const entries = entryList.getEntries();
-        const lastEntry = entries[entries.length - 1];
-        
-        metrics.LCP.value = lastEntry.startTime;
-        metrics.LCP.element = lastEntry.element;
-        
-        console.log('🚀 LCP:', {
-            time: Math.round(lastEntry.startTime) + 'ms',
-            element: lastEntry.element?.tagName,
-            size: lastEntry.size,
-            url: lastEntry.element?.src || lastEntry.element?.innerText?.substring(0, 50)
+        entries.forEach(entry => {
+            lcpCandidates.push({
+                element: entry.element,
+                time: entry.startTime,
+                size: entry.size,
+                url: entry.element?.src || entry.element?.innerText?.substring(0, 100)
+            });
+            
+            if (entry.startTime > metrics.LCP.timing) {
+                metrics.LCP.value = entry.startTime;
+                metrics.LCP.timing = entry.startTime;
+                metrics.LCP.element = entry.element;
+                
+                console.log('🚀 LCP Candidate:', {
+                    time: Math.round(entry.startTime) + 'ms',
+                    element: entry.element?.tagName,
+                    size: entry.size,
+                    content: entry.element?.src ? 'Image' : 'Text'
+                });
+            }
         });
-        
-        // Pagespeed scoring
-        let lcpScore = 'POOR';
-        if (lastEntry.startTime < 2500) lcpScore = 'GOOD';
-        if (lastEntry.startTime < 1200) lcpScore = 'EXCELLENT';
-        
-        console.log('📊 LCP Score:', lcpScore);
     });
     lcpObserver.observe({type: 'largest-contentful-paint', buffered: true});
     
-    // Monitor FCP (First Contentful Paint)
+    // Monitoring FCP
     const fcpObserver = new PerformanceObserver((entryList) => {
         const entries = entryList.getEntries();
-        metrics.FCP.value = entries[0].startTime;
-        console.log('🎨 FCP:', Math.round(entries[0].startTime) + 'ms');
+        const fcpEntry = entries.find(entry => entry.name === 'first-contentful-paint');
+        if (fcpEntry) {
+            metrics.FCP.value = fcpEntry.startTime;
+            metrics.FCP.timing = fcpEntry.startTime;
+            console.log('🎨 FCP:', Math.round(fcpEntry.startTime) + 'ms');
+        }
     });
     fcpObserver.observe({type: 'paint', buffered: true});
     
-    // Monitor CLS (Cumulative Layout Shift)
+    // Zaawansowany monitoring CLS
     let clsValue = 0;
     const clsObserver = new PerformanceObserver((entryList) => {
         for (const entry of entryList.getEntries()) {
             if (!entry.hadRecentInput) {
                 clsValue += entry.value;
                 metrics.CLS.value = clsValue;
+                metrics.CLS.entries.push({
+                    value: entry.value,
+                    element: entry.sources?.[0]?.node,
+                    time: entry.startTime
+                });
+                
+                if (entry.value > 0.01) {
+                    console.log('📐 CLS Shift:', {
+                        score: entry.value.toFixed(4),
+                        element: entry.sources?.[0]?.node?.tagName,
+                        time: Math.round(entry.startTime) + 'ms'
+                    });
+                }
             }
         }
-        console.log('📐 CLS:', clsValue.toFixed(4));
-        
-        // Pagespeed scoring
-        let clsScore = 'POOR';
-        if (clsValue < 0.25) clsScore = 'GOOD';
-        if (clsValue < 0.1) clsScore = 'EXCELLENT';
-        
-        console.log('📊 CLS Score:', clsScore);
     });
     clsObserver.observe({type: 'layout-shift', buffered: true});
     
-    // Monitor FID (First Input Delay)
-    let firstInputTime = 0;
-    let firstInputDelay = 0;
-    
-    const fidObserver = new PerformanceObserver((entryList) => {
-        const entries = entryList.getEntries();
-        entries.forEach(entry => {
-            if (entry.entryType === 'first-input') {
-                firstInputTime = entry.startTime;
-                firstInputDelay = entry.processingStart - entry.startTime;
-                metrics.FID.value = firstInputDelay;
-                
-                console.log('⚡ FID:', Math.round(firstInputDelay) + 'ms');
-                
-                // Pagespeed scoring
-                let fidScore = 'POOR';
-                if (firstInputDelay < 100) fidScore = 'GOOD';
-                if (firstInputDelay < 50) fidScore = 'EXCELLENT';
-                
-                console.log('📊 FID Score:', fidScore);
-            }
-        });
-    });
-    fidObserver.observe({type: 'first-input', buffered: true});
-    
-    // Monitor TTFB (Time to First Byte)
-    const navigationObserver = new PerformanceObserver((entryList) => {
-        const entries = entryList.getEntries();
-        const navEntry = entries[0];
-        
-        metrics.TTFB.value = navEntry.responseStart;
-        metrics.TTI.value = navEntry.domInteractive;
-        
-        console.log('🌐 TTFB:', Math.round(navEntry.responseStart) + 'ms');
-        console.log('🔄 TTI:', Math.round(navEntry.domInteractive) + 'ms');
-        
-        // Pagespeed scoring
-        let ttfbScore = 'POOR';
-        if (navEntry.responseStart < 600) ttfbScore = 'GOOD';
-        if (navEntry.responseStart < 200) ttfbScore = 'EXCELLENT';
-        
-        console.log('📊 TTFB Score:', ttfbScore);
-    });
-    navigationObserver.observe({type: 'navigation', buffered: true});
-    
-    // Monitor Total Blocking Time
+    // Monitoring Total Blocking Time
     let totalBlockingTime = 0;
     const longTaskObserver = new PerformanceObserver((entryList) => {
         for (const entry of entryList.getEntries()) {
-            // Tasks longer than 50ms contribute to TBT
             const blockingTime = entry.duration - 50;
             if (blockingTime > 0) {
                 totalBlockingTime += blockingTime;
+                metrics.TBT.value = totalBlockingTime;
+                metrics.TBT.tasks.push({
+                    duration: entry.duration,
+                    blockingTime: blockingTime,
+                    startTime: entry.startTime
+                });
+                
+                if (blockingTime > 50) {
+                    console.log('🔒 Long Task:', {
+                        duration: Math.round(entry.duration) + 'ms',
+                        blocking: Math.round(blockingTime) + 'ms',
+                        time: Math.round(entry.startTime) + 'ms'
+                    });
+                }
             }
         }
-        metrics.TBT.value = totalBlockingTime;
-        console.log('🔒 Total Blocking Time:', Math.round(totalBlockingTime) + 'ms');
     });
     longTaskObserver.observe({type: 'longtask', buffered: true});
     
-    // Resource Timing - analiza ładowania zasobów
-    window.addEventListener('load', () => {
-        setTimeout(() => {
-            const resources = performance.getEntriesByType('resource');
-            console.log('📦 Resource Loading Analysis:');
+    // Monitoring Time to Interactive
+    const navObserver = new PerformanceObserver((entryList) => {
+        const entries = entryList.getEntries();
+        const navEntry = entries[0];
+        if (navEntry) {
+            metrics.TTI.value = navEntry.domInteractive;
+            metrics.TTFB.value = navEntry.responseStart;
             
-            resources.forEach(resource => {
-                if (resource.duration > 1000) { // Pokaż tylko wolne zasoby
-                    console.log('🐌 Slow resource:', {
-                        name: resource.name,
-                        duration: Math.round(resource.duration) + 'ms',
-                        size: resource.transferSize ? Math.round(resource.transferSize/1024) + 'KB' : 'N/A'
-                    });
-                }
+            console.log('🌐 Navigation:', {
+                TTFB: Math.round(navEntry.responseStart) + 'ms',
+                DOMReady: Math.round(navEntry.domContentLoadedEventEnd) + 'ms',
+                TTI: Math.round(navEntry.domInteractive) + 'ms',
+                Load: Math.round(navEntry.loadEventEnd) + 'ms'
             });
-        }, 1000);
+        }
     });
+    navObserver.observe({type: 'navigation', buffered: true});
     
-    // Mobile-specific checks
-    function checkMobileOptimizations() {
-        console.log('📱 Mobile Optimization Check:');
-        
-        // Check viewport
-        const viewport = document.querySelector('meta[name="viewport"]');
-        if (viewport && viewport.content.includes('width=device-width')) {
-            console.log('✅ Viewport: OK');
-        } else {
-            console.log('❌ Viewport: Missing or incorrect');
-        }
-        
-        // Check tap targets
-        const tapTargets = document.querySelectorAll('a, button, [onclick]');
-        let smallTapTargets = 0;
-        tapTargets.forEach(el => {
-            const rect = el.getBoundingClientRect();
-            const area = rect.width * rect.height;
-            if (area < 2400) { // 48x48px minimum
-                smallTapTargets++;
-            }
-        });
-        if (smallTapTargets > 0) {
-            console.log(`⚠️ Small tap targets: ${smallTapTargets} elements`);
-        } else {
-            console.log('✅ Tap targets: OK');
-        }
-        
-        // Check font sizes
-        const bodyStyle = window.getComputedStyle(document.body);
-        const fontSize = parseInt(bodyStyle.fontSize);
-        if (fontSize >= 16) {
-            console.log('✅ Font size: OK (' + fontSize + 'px)');
-        } else {
-            console.log('❌ Font size: Too small (' + fontSize + 'px)');
-        }
+    // Calculate Speed Index (approximation)
+    function calculateSpeedIndex() {
+        const fcpTime = metrics.FCP.value;
+        const lcpTime = metrics.LCP.value;
+        // Speed Index approximation based on FCP and LCP
+        metrics.SpeedIndex.value = fcpTime + (lcpTime - fcpTime) * 0.3;
+        console.log('📊 Speed Index (approx):', Math.round(metrics.SpeedIndex.value) + 'ms');
     }
     
-    // Final report
+    // Analiza zasobów
+    function analyzeResources() {
+        const resources = performance.getEntriesByType('resource');
+        const slowResources = resources.filter(r => r.duration > 1000);
+        
+        console.log('📦 Resource Analysis:');
+        console.log('   Total resources:', resources.length);
+        console.log('   Slow resources (>1s):', slowResources.length);
+        
+        slowResources.forEach(resource => {
+            console.log('   🐌 Slow:', {
+                name: resource.name.split('/').pop(),
+                duration: Math.round(resource.duration) + 'ms',
+                size: resource.transferSize ? Math.round(resource.transferSize/1024) + 'KB' : 'N/A',
+                type: resource.initiatorType
+            });
+        });
+    }
+    
+    // Mobile-specific audits
+    function mobileAudits() {
+        console.log('📱 Mobile Audits:');
+        
+        // Viewport check
+        const viewport = document.querySelector('meta[name="viewport"]');
+        if (viewport?.content.includes('width=device-width')) {
+            console.log('   ✅ Viewport: OK');
+        } else {
+            console.log('   ❌ Viewport: Missing width=device-width');
+        }
+        
+        // Tap targets
+        const tapTargets = document.querySelectorAll('a, button, [onclick]');
+        let smallTargets = 0;
+        tapTargets.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.width * rect.height < 2400) smallTargets++;
+        });
+        console.log(`   ${smallTargets > 0 ? '❌' : '✅'} Tap targets: ${smallTargets} too small`);
+        
+        // Font sizes
+        const bodyStyle = window.getComputedStyle(document.body);
+        const fontSize = parseInt(bodyStyle.fontSize);
+        console.log(`   ${fontSize >= 16 ? '✅' : '❌'} Font size: ${fontSize}px`);
+        
+        // Image optimization
+        const images = document.querySelectorAll('img');
+        let unoptimizedImages = 0;
+        images.forEach(img => {
+            if (!img.loading && img.src && !img.src.includes('.webp')) unoptimizedImages++;
+        });
+        console.log(`   ${unoptimizedImages > 0 ? '❌' : '✅'} Images: ${unoptimizedImages} not optimized`);
+    }
+    
+    // Final comprehensive report
+    function generateFinalReport() {
+        console.log('%c📊 PAGESPEED MOBILE SIMULATION REPORT', 'color: #ff6b00; font-size: 18px; font-weight: bold;');
+        console.log('='.repeat(60));
+        
+        // Core Web Vitals Assessment
+        console.log('%c⏱️ CORE WEB VITALS ASSESSMENT:', 'color: #333; font-weight: bold;');
+        
+        const lcpScore = metrics.LCP.value < 2500 ? 'GOOD' : 'POOR';
+        const fidScore = metrics.FID.value < 100 ? 'GOOD' : 'POOR';
+        const clsScore = metrics.CLS.value < 0.1 ? 'GOOD' : 'POOR';
+        const fcpScore = metrics.FCP.value < 1500 ? 'GOOD' : 'POOR';
+        
+        console.log(`   LCP: ${Math.round(metrics.LCP.value)}ms - ${lcpScore}`);
+        console.log(`   FCP: ${Math.round(metrics.FCP.value)}ms - ${fcpScore}`);
+        console.log(`   CLS: ${metrics.CLS.value.toFixed(4)} - ${clsScore}`);
+        console.log(`   TBT: ${Math.round(metrics.TBT.value)}ms - ${metrics.TBT.value < 200 ? 'GOOD' : 'POOR'}`);
+        
+        // Performance Scores
+        console.log('%c📈 PERFORMANCE SCORES:', 'color: #333; font-weight: bold;');
+        console.log(`   TTFB: ${Math.round(metrics.TTFB.value)}ms`);
+        console.log(`   TTI: ${Math.round(metrics.TTI.value)}ms`);
+        console.log(`   Speed Index: ${Math.round(metrics.SpeedIndex.value)}ms`);
+        
+        // Estimated Pagespeed Score
+        let score = 100;
+        if (metrics.LCP.value > 2500) score -= 30;
+        if (metrics.FCP.value > 1500) score -= 20;
+        if (metrics.CLS.value > 0.1) score -= 20;
+        if (metrics.TBT.value > 200) score -= 15;
+        if (metrics.TTFB.value > 600) score -= 15;
+        
+        console.log('%c🎯 ESTIMATED PAGESPEED SCORE:', 'color: #333; font-weight: bold;');
+        console.log(`   ${score}/100 ${score >= 90 ? '🟢' : score >= 50 ? '🟡' : '🔴'}`);
+        
+        // Recommendations
+        console.log('%c💡 RECOMMENDATIONS:', 'color: #333; font-weight: bold;');
+        if (metrics.LCP.value > 2500) console.log('   • Optimize LCP element:', metrics.LCP.element?.tagName);
+        if (metrics.FCP.value > 1500) console.log('   • Improve First Contentful Paint');
+        if (metrics.CLS.value > 0.1) console.log('   • Reduce Cumulative Layout Shift');
+        if (metrics.TBT.value > 200) console.log('   • Reduce JavaScript execution time');
+        if (metrics.TTFB.value > 600) console.log('   • Improve server response time');
+        
+        console.log('='.repeat(60));
+    }
+    
+    // Start simulation
+    simulatePagespeedConditions();
+    
+    // Generate reports
     window.addEventListener('load', () => {
         setTimeout(() => {
-            console.log('='.repeat(50));
-            console.log('📊 FINAL PAGESPEED MOBILE REPORT');
-            console.log('='.repeat(50));
-            
-            console.log('⏱️ Core Web Vitals:');
-            console.log('  LCP:', Math.round(metrics.LCP.value) + 'ms');
-            console.log('  FID:', Math.round(metrics.FID.value) + 'ms');
-            console.log('  CLS:', metrics.CLS.value.toFixed(4));
-            
-            console.log('📈 Performance Metrics:');
-            console.log('  FCP:', Math.round(metrics.FCP.value) + 'ms');
-            console.log('  TTFB:', Math.round(metrics.TTFB.value) + 'ms');
-            console.log('  TTI:', Math.round(metrics.TTI.value) + 'ms');
-            console.log('  TBT:', Math.round(metrics.TBT.value) + 'ms');
-            
-            // Estimated Pagespeed Score
-            let estimatedScore = 0;
-            if (metrics.LCP.value < 2500) estimatedScore += 25;
-            if (metrics.FID.value < 100) estimatedScore += 25;
-            if (metrics.CLS.value < 0.1) estimatedScore += 25;
-            if (metrics.FCP.value < 1500) estimatedScore += 25;
-            
-            console.log('🎯 Estimated Pagespeed Score:', estimatedScore + '/100');
-            
-            checkMobileOptimizations();
-            
-            console.log('='.repeat(50));
-            
-        }, 3000); // Wait for all metrics to stabilize
+            calculateSpeedIndex();
+            analyzeResources();
+            mobileAudits();
+            generateFinalReport();
+        }, 3000);
     });
-    
-    // Simulate mobile conditions warning
-    console.log('%c⚠️ REMEMBER: This is real device monitoring. For exact Pagespeed conditions:', 'color: orange; font-size: 14px;');
-    console.log('%c- Use Chrome DevTools → Performance → Throttling: Slow 3G', 'color: orange;');
-    console.log('%c- Use Chrome DevTools → Performance → CPU: 4x slowdown', 'color: orange;');
-    console.log('%c- Test on real mobile device with 3G connection', 'color: orange;');
     
 })();
 </script>
