@@ -1,6 +1,67 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="max-image-preview:large" name="robots"/>
+<style>
+/* POPRAWIONY KRITYCZNY CSS - bezpieczny dla Swipera */
+.navbar { 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    z-index: 1000; 
+    background: transparent; 
+}
+.navbar .logo img { 
+    height: 50px; 
+    width: auto; 
+}
+.slider { 
+    position: relative; 
+}
+.main-slider { 
+    position: relative;
+}
+body, html { 
+    margin: 0; 
+    padding: 0; 
+    font-family: Outfit, sans-serif; 
+}
+.container { 
+    width: 100%; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+}
+.loadwraps { 
+    display: none; 
+}
+
+/* TYLKO najważniejsze style tekstu - nie ruszaj slidera */
+.slider .container {
+    position: relative;
+    z-index: 2;
+}
+.slider .container h1 {
+    font-family: Outfit, sans-serif;
+    color: #ffffff;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.slider .container p {
+    font-family: Outfit, sans-serif;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+/* Zapobieganie FOUC - delikatne */
+body { 
+    opacity: 1; 
+    visibility: visible; 
+}
+</style>
+<link rel="preload" href="wp-content/uploads/2023/10/slider-fixmaster-1.webp" as="image" fetchpriority="high">
 <!-- PRELOAD CSS - BEZPIECZNE -->
 <link rel="preload" href="wp-content/themes/fixmaster/css/style68b3_smartfix_polish.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <link rel="preload" href="wp-content/themes/fixmaster/css/bootstrap.min68b3.css?ver=1" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -20,9 +81,6 @@
 <link href="wp-content/themes/fixmaster/css/flaticon68b3.css" rel="stylesheet">
 <link href="wp-content/themes/fixmaster/custom68b3.css?ver=1" rel="stylesheet">
 </noscript>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="max-image-preview:large" name="robots"/>
 <style></style>
 <style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
 <script>
