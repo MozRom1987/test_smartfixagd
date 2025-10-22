@@ -8,6 +8,48 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<!-- Preload pierwszego obrazka slidera -->
+<link rel="preload" href="wp-content/uploads/2023/10/slider-fixmaster-1.webp" as="image" fetchpriority="high">
+<script>
+// Automatyczna optymalizacja obrazków
+document.addEventListener('DOMContentLoaded', function() {
+    const images = document.querySelectorAll('img');
+    
+    images.forEach(img => {
+        // Lazy loading dla wszystkich obrazków poza pierwszymi 3
+        if (!img.hasAttribute('loading')) {
+            img.loading = 'lazy';
+        }
+        
+        // Async decoding
+        if (!img.hasAttribute('decoding')) {
+            img.decoding = 'async';
+        }
+        
+        // Automatyczne dodawanie wymiarów
+        if (!img.hasAttribute('width') || !img.hasAttribute('height')) {
+            const className = img.className || '';
+            const src = img.src.toLowerCase();
+            
+            if (src.includes('logo')) {
+                img.setAttribute('width', '200');
+                img.setAttribute('height', '60');
+            } else if (src.includes('services') || src.includes('about')) {
+                img.setAttribute('width', '400');
+                img.setAttribute('height', '300');
+            } else if (src.includes('slider')) {
+                img.setAttribute('width', '1920');
+                img.setAttribute('height', '1080');
+            } else {
+                img.setAttribute('width', '300');
+                img.setAttribute('height', '200');
+            }
+        }
+    });
+    
+    console.log('✅ Optimized ' + images.length + ' images');
+});
+</script>
 <style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
 <script>
 // BEZPIECZNA OPTYMALIZACJA OBRAZKÓW - nie zmienia layoutu
@@ -6368,6 +6410,67 @@ window.addEventListener('load', function() {
     } else {
         console.log('❌ Some optimizations missing');
     }
+});
+</script>
+<script>
+// Opóźnione ładowanie niekrytycznych skryptów
+window.addEventListener('load', function() {
+    setTimeout(function() {
+        const scripts = [
+            'wp-content/themes/fixmaster/js/jquery.min68b3.js?ver=1',
+            'wp-content/themes/fixmaster/js/swiper.min68b3.js?ver=1',
+            'wp-content/themes/fixmaster/js/wow.min68b3.js?ver=1',
+            'wp-content/themes/fixmaster/js/scripts68b3.js?ver=1',
+            'wp-content/themes/fixmaster/js/3d.jquery68b3.js?ver=1',
+            'wp-content/themes/fixmaster/js/pointer68b3.js?ver=1',
+            'wp-content/themes/fixmaster/js/yukari-cik68b3.js?ver=1'
+        ];
+        
+        scripts.forEach(function(src) {
+            var script = document.createElement('script');
+            script.src = src;
+            script.async = true;
+            document.body.appendChild(script);
+            console.log('📜 Loaded: ' + src.split('/').pop());
+        });
+    }, 2000); // 2 sekundy opóźnienia
+});
+
+// Naprawa init_pointer
+if (typeof init_pointer === 'undefined') {
+    window.init_pointer = function() { console.log('init_pointer placeholder') };
+}
+</script>
+<script>
+// Skrypt diagnostyczny popraw
+window.addEventListener('load', function() {
+    setTimeout(function() {
+        console.log('🎯 OPTIMIZATION REPORT:');
+        
+        // Sprawdź CSS
+        const cssLinks = document.querySelectorAll('link[rel="stylesheet"]');
+        const asyncCSS = Array.from(cssLinks).filter(link => link.media === 'all');
+        console.log(`📦 CSS loaded asynchronously: ${asyncCSS.length}/${cssLinks.length}`);
+        
+        // Sprawdź obrazy
+        const images = document.querySelectorAll('img');
+        const optimizedImages = Array.from(images).filter(img => 
+            img.loading === 'lazy' && 
+            img.hasAttribute('width') && 
+            img.hasAttribute('height')
+        );
+        console.log(`📸 Optimized images: ${optimizedImages.length}/${images.length}`);
+        
+        // Sprawdź preload
+        const preloads = document.querySelectorAll('link[rel="preload"]');
+        console.log(`🚀 Preloads: ${preloads.length}`);
+        
+        if (asyncCSS.length > 0 && optimizedImages.length === images.length) {
+            console.log('✅ All optimizations successful!');
+        } else {
+            console.log('⚠️ Some optimizations needed');
+        }
+    }, 3000);
 });
 </script>
 </body>
