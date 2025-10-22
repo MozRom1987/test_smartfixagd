@@ -4,10 +4,34 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="max-image-preview:large" name="robots"/>
+<link rel="preload" href="wp-content/uploads/2023/10/slider-fixmaster-1-mobile.webp" as="image" media="(max-width: 768px)" fetchpriority="high">
 <!-- PRELOAD CZCIONKI Outfit - tylko potrzebne warianty -->
 <link rel="preload" href="wp-content/themes/fixmaster/css/fonts/outfit/outfit-v15-latin_latin-ext-700.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="wp-content/themes/fixmaster/css/fonts/outfit/outfit-v15-latin_latin-ext-regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="wp-content/themes/fixmaster/css/fonts/flaticona1f9a1f9.woff2?1895e337cdf1a9a72d08e55e17b16599" as="font" type="font/woff2" crossorigin>
+<style>
+/* KRITYCZNY CSS DLA MOBILE - tylko dla slidera */
+@media (max-width: 768px) {
+    .slider { 
+        position: relative; 
+        min-height: 100vh;
+        overflow: hidden;
+    }
+    .slider img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
+    }
+    .slider .container {
+        position: relative;
+        z-index: 2;
+    }
+}
+</style>
 <style>
 /* KRITYCZNY CSS - zoptymalizowany dla LCP */
 .navbar { 
@@ -5991,6 +6015,18 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('✅ H1 rendered immediately:', h1Text);
     console.log('🕒 DOM Ready at:', performance.now().toFixed(0), 'ms');
 });
+</script>
+<script>
+// Sprawdź czy mobile
+if (window.innerWidth <= 768) {
+    console.log('📱 Mobile detected - LCP optimization active');
+    
+    new PerformanceObserver((entryList) => {
+        const entries = entryList.getEntries();
+        const lastEntry = entries[entries.length - 1];
+        console.log('📱 MOBILE LCP:', Math.round(lastEntry.startTime), 'ms');
+    }).observe({type: 'largest-contentful-paint', buffered: true});
+}
 </script>
 </body>
 </html>
