@@ -5973,5 +5973,24 @@ var wpcf7 = {"api":{"root":"https:\/\/garantiwebtasarim.com\/wordpress\/fixmaste
         init_pointer({
         })
     </script> 
+<!-- DIAGNOSTYKA LCP -->
+<script>
+// Monitoruj LCP w czasie rzeczywistym
+new PerformanceObserver((entryList) => {
+    const entries = entryList.getEntries();
+    const lastEntry = entries[entries.length - 1];
+    console.log('🚀 LCP Element:', lastEntry.element);
+    console.log('⏱️ LCP Time:', Math.round(lastEntry.startTime), 'ms');
+    console.log('📏 LCP Size:', lastEntry.size);
+}).observe({type: 'largest-contentful-paint', buffered: true});
+
+// Sprawdź kiedy tekst jest renderowany
+document.addEventListener('DOMContentLoaded', function() {
+    const h1 = document.querySelector('.slider h1');
+    const h1Text = h1?.textContent || h1?.innerText;
+    console.log('✅ H1 rendered immediately:', h1Text);
+    console.log('🕒 DOM Ready at:', performance.now().toFixed(0), 'ms');
+});
+</script>
 </body>
 </html>
