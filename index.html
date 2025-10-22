@@ -6264,5 +6264,32 @@ var wpcf7 = {"api":{"root":"https:\/\/garantiwebtasarim.com\/wordpress\/fixmaste
     
 })();
 </script>
+<script>
+// Skrypt diagnostyczny - wklej przed </body>
+console.log('🔍 Performance Diagnostics:');
+
+// Sprawdź rozmiary obrazków
+const images = performance.getEntriesByType('resource')
+    .filter(r => r.initiatorType === 'img')
+    .forEach(img => {
+        if (img.transferSize > 100000) { // >100KB
+            console.log('🐌 Large image:', {
+                name: img.name.split('/').pop(),
+                size: Math.round(img.transferSize/1024) + 'KB',
+                duration: Math.round(img.duration) + 'ms'
+            });
+        }
+    });
+
+// Sprawdź CSS blokujący renderowanie
+const cssResources = performance.getEntriesByType('resource')
+    .filter(r => r.initiatorType === 'css')
+    .forEach(css => {
+        console.log('📦 CSS:', {
+            name: css.name.split('/').pop(),
+            duration: Math.round(css.duration) + 'ms'
+        });
+    });
+</script>
 </body>
 </html>
