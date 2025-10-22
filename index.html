@@ -81,6 +81,22 @@ body {
 * { 
     box-sizing: border-box; 
 }
+/* Optymalizacja czcionki ikon - zapobiega FOIT */
+@font-face {
+    font-family: 'Flaticon';
+    src: url('wp-content/themes/fixmaster/css/fonts/Flaticon.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block; /* Lepsze niż swap dla ikon */
+}
+
+/* Rezerwowanie miejsca dla ikon */
+[class^="flaticon-"], [class*=" flaticon-"] {
+    display: inline-block;
+    min-width: 1em;
+    min-height: 1em;
+    visibility: visible !important;
+}
 </style>
 <style>
 /* ROZSZERZONY KRITYCZNY CSS - stopniowo testuj */
