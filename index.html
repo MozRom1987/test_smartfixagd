@@ -4,8 +4,11 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="max-image-preview:large" name="robots"/>
+<!-- PRELOAD CZCIONKI Outfit - tylko potrzebne warianty -->
+<link rel="preload" href="wp-content/themes/fixmaster/css/fonts/outfit/outfit-v15-latin_latin-ext-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="wp-content/themes/fixmaster/css/fonts/outfit/outfit-v15-latin_latin-ext-regular.woff2" as="font" type="font/woff2" crossorigin>
 <style>
-/* POPRAWIONY KRITYCZNY CSS - bezpieczny dla Swipera */
+/* KRITYCZNY CSS - zoptymalizowany dla LCP */
 .navbar { 
     position: fixed; 
     top: 0; 
@@ -20,6 +23,7 @@
 }
 .slider { 
     position: relative; 
+    min-height: 100vh;
 }
 .main-slider { 
     position: relative;
@@ -33,12 +37,13 @@ body, html {
     width: 100%; 
     max-width: 1200px; 
     margin: 0 auto; 
+    padding: 0 15px;
 }
 .loadwraps { 
     display: none; 
 }
 
-/* TYLKO najważniejsze style tekstu - nie ruszaj slidera */
+/* STYLE DLA H1 - ZOPTYMALIZOWANE DLA SZYBKIEGO RENDEROWANIA */
 .slider .container {
     position: relative;
     z-index: 2;
@@ -48,17 +53,33 @@ body, html {
     color: #ffffff;
     font-weight: 700;
     line-height: 1.2;
+    /* Dodane właściwości dla lepszego LCP */
+    font-size: clamp(2rem, 5vw, 4rem); /* Responsive bez JS */
+    margin: 0;
+    padding: 20px 0;
+    opacity: 1 !important; /* Wymuszenie widoczności */
+    visibility: visible !important;
+    transform: none !important; /* Unikanie opóźnień transformacji */
+    will-change: auto; /* Unikanie wymuszenia warstwy kompozytowej */
 }
+
 .slider .container p {
     font-family: Outfit, sans-serif;
     color: #ffffff;
     line-height: 1.6;
+    margin: 0;
+    padding: 10px 0;
 }
 
-/* Zapobieganie FOUC - delikatne */
+/* ZAPOBIEGANIE FOUC - zoptymalizowane */
 body { 
     opacity: 1; 
     visibility: visible; 
+}
+
+/* Dodatkowe style dla lepszego LCP */
+* { 
+    box-sizing: border-box; 
 }
 </style>
 <style>
