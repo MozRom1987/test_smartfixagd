@@ -61,6 +61,23 @@ body {
     visibility: visible; 
 }
 </style>
+<style>
+/* ROZSZERZONY KRITYCZNY CSS - stopniowo testuj */
+.navbar { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; background: transparent; }
+.navbar .logo img { height: 50px; width: auto; }
+.slider { position: relative; min-height: 100vh; }
+.slider .container { position: relative; z-index: 2; }
+body, html { margin: 0; padding: 0; font-family: Outfit, sans-serif; }
+.container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+.loadwraps { display: none; }
+* { box-sizing: border-box; }
+
+/* Style tekstu - jeśli nie psują layoutu */
+.slider h1, .slider p { 
+    font-family: Outfit, sans-serif;
+    color: #ffffff;
+}
+</style>
 <link rel="preload" href="wp-content/uploads/2023/10/slider-fixmaster-1.webp" as="image" fetchpriority="high">
 <!-- PRELOAD CSS - BEZPIECZNE -->
 <link rel="preload" href="wp-content/themes/fixmaster/css/style68b3_smartfix_polish.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
