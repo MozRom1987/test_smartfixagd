@@ -5050,22 +5050,6 @@ header.page-header {
 }
 </script></head>
 <body>
-<script>
-(function() {
-    var preloader = document.querySelector('.loadwraps');
-    if (preloader && window.innerWidth <= 768) {
-        preloader.remove(); // Usuń całkowicie na mobile
-    } else if (preloader) {
-        // Na desktop: skrócona animacja
-        setTimeout(function() {
-            preloader.classList.add('fade12');
-            setTimeout(function() {
-                preloader.remove();
-            }, 500);
-        }, 1000);
-    }
-})();
-</script>
 <style>
 .bg-light {background: none;}
 .navbar-light .navbar-nav .nav-link {
