@@ -1,0 +1,41 @@
+@font-face{font-family:flaticon;src:url(fonts/flaticona1f9a1f9.ttf?1895e337cdf1a9a72d08e55e17b16599) format("truetype"),url(fonts/flaticona1f9a1f9.woff?1895e337cdf1a9a72d08e55e17b16599) format("woff"),url(fonts/flaticona1f9a1f9.woff2?1895e337cdf1a9a72d08e55e17b16599) format("woff2"),url(fonts/flaticona1f9a1f9.eot?1895e337cdf1a9a72d08e55e17b16599#iefix) format("embedded-opentype"),url(fonts/flaticona1f9a1f9.svg?1895e337cdf1a9a72d08e55e17b16599#flaticon) format("svg")}i[class^=flaticon-]:before,i[class*=" flaticon-"]:before{font-family:flaticon!important;font-style:normal;font-weight:400!important;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.flaticon-pin:before{content:"\f14c"}.flaticon-stopwatch:before{content:"\f14e"}.flaticon-clipboard:before{content:"\f14f"}.flaticon-review:before{content:"\f151"}.flaticon-facebook-1:before{content:"\f155"}.flaticon-instagram-1:before{content:"\f156"}.flaticon-cog:before{content:"\f15f"}.flaticon-chevron:before{content:"\f187"}.flaticon-group:before{content:"\f18c"}.flaticon-medal:before{content:"\f18d"}.flaticon-location:before{content:"\f190"}.flaticon-email:before{content:"\f191"}.flaticon-recommended:before{content:"\f19f"}.flaticon-play:before{content:"\f1a7"}.flaticon-call:before{content:"\f1b1"}.flaticon-helmet:before{content:"\f1bd"}.flaticon-accounting:before{content:"\f1ca"}.flaticon-call-center:before{content:"\f1d1"}.flaticon-headphones:before{content:"\f1d8"}
+
+@font-face {
+  font-family: "flaticon";
+  src: url("fonts/flaticon.woff") format("woff"),
+       url("fonts/flaticon.ttf") format("truetype"),
+       url("fonts/flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-weight:400!important;
+}
+.flaticon-003-washing-machine:before { content: "\f102"; }
+.flaticon-005-clock:before { content: "\f104"; }
+.flaticon-024-air-conditioner:before { content: "\f117"; }
+.flaticon-030-cupboard:before { content: "\f11d"; }
+
+@font-face {
+  font-family: 'icomoon';
+  font-family: 'icomoon' !important;
+  src: url("fonts/icomoon.eot") format("embedded-opentype"),
+       url("fonts/icomoon.ttf") format("truetype"),
+       url("fonts/icomooneb89.svg?ke6tpj#icomoon") format("svg");
+    font-weight: normal;
+    font-weight:400!important;
+}
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-refrigerator-2:before {
+  content: "\e900";
+  line-height: 90px;
+}
