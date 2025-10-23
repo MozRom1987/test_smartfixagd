@@ -7,9 +7,11 @@
 
 
 <link href="css/style68b3.css?ver=1" id="style-css" media="all" rel="stylesheet"/>
-<link href="css/swiper.min68b3.css?ver=1" id="swiper-css" media="all" rel="stylesheet"/>
+<link rel="preload" href="css/swiper.min68b3.css?ver=1" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="css/swiper.min68b3.css?ver=1"></noscript>
 <link href="css/bootstrap.min68b3.css?ver=1" id="bootstrap-css" media="all" rel="stylesheet"/>
-<link href="css/flaticon68b3.css" id="flaticon-css" media="all" rel="stylesheet"/>
+<link rel="preload" href="css/flaticon68b3.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="css/flaticon68b3.css"></noscript>
 <link href="css/style68b3_smartfix_polish.css" rel="stylesheet">
 <link href="index.html" rel="canonical"/>
 <link href="index.html" rel="shortlink"/>
@@ -54,29 +56,6 @@
 </script><style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }
 
 /* Lokalna czcionka Outfit - POPRAWIONE ŚCIEŻKI (bez ./) */
-@font-face {
-    font-family: 'Outfit';
-    font-style: normal;
-    font-weight: 100;
-    src: url('css/fonts/outfit/outfit-v15-latin_latin-ext-100.woff2') format('woff2');
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Outfit';
-    font-style: normal;
-    font-weight: 200;
-    src: url('css/fonts/outfit/outfit-v15-latin_latin-ext-200.woff2') format('woff2');
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Outfit';
-    font-style: normal;
-    font-weight: 300;
-    src: url('css/fonts/outfit/outfit-v15-latin_latin-ext-300.woff2') format('woff2');
-    font-display: swap;
-}
 
 @font-face {
     font-family: 'Outfit';
@@ -86,13 +65,6 @@
     font-display: swap;
 }
 
-@font-face {
-    font-family: 'Outfit';
-    font-style: normal;
-    font-weight: 500;
-    src: url('css/fonts/outfit/outfit-v15-latin_latin-ext-500.woff2') format('woff2');
-    font-display: swap;
-}
 
 @font-face {
     font-family: 'Outfit';
@@ -107,22 +79,6 @@
     font-style: normal;
     font-weight: 700;
     src: url('css/fonts/outfit/outfit-v15-latin_latin-ext-700.woff2') format('woff2');
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Outfit';
-    font-style: normal;
-    font-weight: 800;
-    src: url('css/fonts/outfit/outfit-v15-latin_latin-ext-800.woff2') format('woff2');
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Outfit';
-    font-style: normal;
-    font-weight: 900;
-    src: url('css/fonts/outfit/outfit-v15-latin_latin-ext-900.woff2') format('woff2');
     font-display: swap;
 }
 
@@ -3628,11 +3584,62 @@ p.ic {
 .sticky p.ic {
     color: #fff !important;
 }
-
 </style>
+<script>
+// Dodaj do <head> - przed zamknięciem </head>
+document.addEventListener('DOMContentLoaded', function() {
+    // Sprawdź kiedy Swiper CSS się załaduje
+    const swiperLink = document.querySelector('link[href*="swiper.min68b3"]');
+    const flaticonLink = document.querySelector('link[href*="flaticon68b3"]');
+    
+    let swiperLoaded = false;
+    let flaticonLoaded = false;
+    
+    function checkStylesLoaded() {
+        if (swiperLoaded && flaticonLoaded) {
+            // Oba CSS załadowane - inicjalizuj slider
+            document.querySelector('.slider').classList.add('swiper-loaded');
+            initSwiper();
+        }
+    }
+    
+    swiperLink.onload = function() {
+        swiperLoaded = true;
+        checkStylesLoaded();
+    };
+    
+    flaticonLink.onload = function() {
+        flaticonLoaded = true;
+        checkStylesLoaded();
+    };
+    
+    // Fallback - jeśli CSS już załadowane
+    if (swiperLink.sheet || swiperLink.styleSheet) {
+        swiperLoaded = true;
+    }
+    if (flaticonLink.sheet || flaticonLink.styleSheet) {
+        flaticonLoaded = true;
+    }
+    checkStylesLoaded();
+    
+    function initSwiper() {
+        // Tutaj kod inicjalizacji Swiper - przenieś z scripts68b3.js
+        if (typeof Swiper !== 'undefined') {
+            new Swiper('.main-slider', {
+                loop: true,
+                autoplay: { delay: 5000 },
+                pagination: { el: '.swiper-pagination', clickable: true },
+                navigation: {
+                    nextEl: '.button-next',
+                    prevEl: '.button-prev'
+                }
+            });
+        }
+    }
+});
+</script>
 </head>
 <body>
-
 <div class="loadwraps">
 <div class="dot"></div>
 <div class="outline"><span></span></div>
