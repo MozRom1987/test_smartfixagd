@@ -2215,112 +2215,34 @@ h3.prongl {
 
 
 <script>
-// Dodaj do <head> - przed zamknięciem </head>
+// UPROSZCZONY i bardziej niezawodny skrypt
 document.addEventListener('DOMContentLoaded', function() {
-    // Sprawdź kiedy Swiper CSS się załaduje
-    const swiperLink = document.querySelector('link[href*="swiper.min68b3"]');
-    const flaticonLink = document.querySelector('link[href*="flaticon68b3"]');
-    
-    let swiperLoaded = false;
-    let flaticonLoaded = false;
-    
-    function checkStylesLoaded() {
-        if (swiperLoaded && flaticonLoaded) {
-            // Oba CSS załadowane - inicjalizuj slider
-            document.querySelector('.slider').classList.add('swiper-loaded');
-            initSwiper();
-        }
-    }
-    
-    swiperLink.onload = function() {
-        swiperLoaded = true;
-        checkStylesLoaded();
-    };
-    
-    flaticonLink.onload = function() {
-        flaticonLoaded = true;
-        checkStylesLoaded();
-    };
-    
-    // Fallback - jeśli CSS już załadowane
-    if (swiperLink.sheet || swiperLink.styleSheet) {
-        swiperLoaded = true;
-    }
-    if (flaticonLink.sheet || flaticonLink.styleSheet) {
-        flaticonLoaded = true;
-    }
-    checkStylesLoaded();
-    
     function initSwiper() {
-        // Tutaj kod inicjalizacji Swiper - przenieś z script.js
         if (typeof Swiper !== 'undefined') {
             new Swiper('.main-slider', {
                 loop: true,
-                autoplay: { delay: 5000 },
-                pagination: { el: '.swiper-pagination', clickable: true },
+                autoplay: { 
+                    delay: 5000,
+                    disableOnInteraction: false 
+                },
+                pagination: { 
+                    el: '.swiper-pagination', 
+                    clickable: true 
+                },
                 navigation: {
                     nextEl: '.button-next',
                     prevEl: '.button-prev'
                 }
             });
-        }
-    }
-});
-
-</style>
-
-
-<script>
-// Dodaj do <head> - przed zamknięciem </head>
-document.addEventListener('DOMContentLoaded', function() {
-    // Sprawdź kiedy Swiper CSS się załaduje
-    const swiperLink = document.querySelector('link[href*="swiper.min68b3"]');
-    const flaticonLink = document.querySelector('link[href*="flaticon68b3"]');
-    
-    let swiperLoaded = false;
-    let flaticonLoaded = false;
-    
-    function checkStylesLoaded() {
-        if (swiperLoaded && flaticonLoaded) {
-            // Oba CSS załadowane - inicjalizuj slider
-            document.querySelector('.slider').classList.add('swiper-loaded');
-            initSwiper();
+            console.log('Swiper zainicjalizowany');
+        } else {
+            // Ponów próbę za 100ms jeśli Swiper nie jest gotowy
+            setTimeout(initSwiper, 100);
         }
     }
     
-    swiperLink.onload = function() {
-        swiperLoaded = true;
-        checkStylesLoaded();
-    };
-    
-    flaticonLink.onload = function() {
-        flaticonLoaded = true;
-        checkStylesLoaded();
-    };
-    
-    // Fallback - jeśli CSS już załadowane
-    if (swiperLink.sheet || swiperLink.styleSheet) {
-        swiperLoaded = true;
-    }
-    if (flaticonLink.sheet || flaticonLink.styleSheet) {
-        flaticonLoaded = true;
-    }
-    checkStylesLoaded();
-    
-    function initSwiper() {
-        // Tutaj kod inicjalizacji Swiper - przenieś z script.js
-        if (typeof Swiper !== 'undefined') {
-            new Swiper('.main-slider', {
-                loop: true,
-                autoplay: { delay: 5000 },
-                pagination: { el: '.swiper-pagination', clickable: true },
-                navigation: {
-                    nextEl: '.button-next',
-                    prevEl: '.button-prev'
-                }
-            });
-        }
-    }
+    // Zacznij inicjalizację po krótkim opóźnieniu
+    setTimeout(initSwiper, 300);
 });
 </script>
 </head>
@@ -3173,5 +3095,6 @@ document.querySelectorAll('#smartfix-form input, #smartfix-form textarea').forEa
         init_pointer({
         })
     </script>
+    
 </body>
 </html>
