@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="pl">
-<head>
-<link as="style" href="css/style_smartfix_polish.css" rel="preload"/><link as="style" href="css/bootstrap.min.css?ver=1" rel="preload"/><link as="style" href="css/style.css?ver=1" rel="preload"/>
+<head><link as="style" href="css/style_smartfix_polish.css" rel="preload"/><link as="style" href="css/bootstrap.min.css?ver=1" rel="preload"/><link as="style" href="css/style.css?ver=1" rel="preload"/>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="max-image-preview:large" name="robots"/>
@@ -2218,6 +2217,38 @@ h3.prongl {
 }
 </style>
 
+
+<script>
+// UPROSZCZONY i bardziej niezawodny skrypt
+document.addEventListener('DOMContentLoaded', function() {
+    function initSwiper() {
+        if (typeof Swiper !== 'undefined') {
+            new Swiper('.main-slider', {
+                loop: true,
+                autoplay: { 
+                    delay: 5000,
+                    disableOnInteraction: false 
+                },
+                pagination: { 
+                    el: '.swiper-pagination', 
+                    clickable: true 
+                },
+                navigation: {
+                    nextEl: '.button-next',
+                    prevEl: '.button-prev'
+                }
+            });
+            console.log('Swiper zainicjalizowany');
+        } else {
+            // Ponów próbę za 100ms jeśli Swiper nie jest gotowy
+            setTimeout(initSwiper, 100);
+        }
+    }
+    
+    // Zacznij inicjalizację po krótkim opóźnieniu
+    setTimeout(initSwiper, 300);
+});
+</script>
 </head>
 <body>
 <div class="loadwraps">
@@ -2226,7 +2257,7 @@ h3.prongl {
 </div>
 <aside class="side-widget">
 <div class="inner">
-<div class="logo"> <a href="index.html"><img alt="Image" loading="lazy" width="214" height="76" src="images/smartfixagd-logo-7.webp"/></a> </div>
+<div class="logo"> <a href="index.html"><img alt="Image" loading="lazy" src="images/smartfixagd-logo-7.webp"/></a> </div>
 <div class="hide-mobile">
 <div class="or">
 <h2 class="h2-baslik-hizmetler-2"> Dane Kontaktowe </h2>
@@ -2281,8 +2312,8 @@ h3.prongl {
 <nav class="navbar navbar-expand-md navbar-light bg-light">
 <div class="container">
 <div class="logo"> <a href="index.html">
-<img alt="Image" class="h" loading="lazy" width="214" height="76" src="images/smartfixagd-logo-6.webp"/>
-<img alt="Image" class="s" loading="lazy" width="214" height="76" src="images/smartfixagd-logo-7.webp"/>
+<img alt="Image" class="h" loading="lazy" src="images/smartfixagd-logo-6.webp"/>
+<img alt="Image" class="s" loading="lazy" src="images/smartfixagd-logo-7.webp"/>
 </a>
 </div>
 <div class="site-menu">
@@ -2400,7 +2431,7 @@ h3.prongl {
 <div class="container">
 <div class="row">
 <div class="col-xl-6">
-<img alt="SmartFixAGD serwis AGD" class="galeri__gorsel--3ab zimage" decoding="async" loading="lazy" width="695" height="618" src="images/about-smartfixagd-1.webp"/>
+<img alt="" class="galeri__gorsel--3ab zimage" decoding="async" loading="lazy" src="images/about-smartfixagd-1.webp"/>
 </div>
 <div class="col-xl-6 wow fadeInUp" data-wow-delay="0.3s">
 <h2 class="h2-baslik-anasayfa-ozel btw wow fadeInRight" data-wow-delay="0.4s" style="text-align:left;"> SmartFixAGD: Twój Zaufany Serwis AGD </h2>
@@ -2579,7 +2610,7 @@ background-position: center !important;box-shadow: 0px 0px 0px 5000px #0066ccbf 
 <div class="dep" onclick="location.href='#';" style="cursor:pointer;">
 <div class="or56">
 <div class="imgst">
-<img alt="Naprawa lodówek" class="imgs" decoding="async" loading="lazy" width="325" height="334" src="images/services-smartfixagd-1.webp"/>
+<img alt="" class="imgs" decoding="async" loading="lazy" src="images/services-smartfixagd-1.webp"/>
 </div>
 <span class="iconss2 or56"><i class="sicon-refrigerator"></i></span>
 <h3 class="prongl">Serwis Lodówek</h3>
@@ -2593,7 +2624,7 @@ background-position: center !important;box-shadow: 0px 0px 0px 5000px #0066ccbf 
 <div class="dep" onclick="location.href='#';" style="cursor:pointer;">
 <div class="or56">
 <div class="imgst">
-<img alt="Naprawa pralek" class="imgs" decoding="async" loading="lazy" width="325" height="334" src="images/services-smartfixagd-2.webp"/>
+<img alt="" class="imgs" decoding="async" loading="lazy" src="images/services-smartfixagd-2.webp"/>
 </div>
 <span class="iconss2 or56"><i class="sicon-washer"></i></span>
 <h3 class="prongl">Naprawa Pralek</h3>
@@ -2607,7 +2638,7 @@ background-position: center !important;box-shadow: 0px 0px 0px 5000px #0066ccbf 
 <div class="dep" onclick="location.href='#';" style="cursor:pointer;">
 <div class="or56">
 <div class="imgst">
-<img alt="Naprawa piekarników" class="imgs" decoding="async" loading="lazy" width="325" height="334" src="images/services-smartfixagd-5.webp"/>
+<img alt="" class="imgs" decoding="async" loading="lazy" src="images/services-smartfixagd-5.webp"/>
 </div>
 <span class="iconss2 or56"><i class="sicon-oven"></i></span>
 <h3 class="prongl">Naprawa Piekarników</h3>
@@ -2621,7 +2652,7 @@ background-position: center !important;box-shadow: 0px 0px 0px 5000px #0066ccbf 
 <div class="dep" onclick="location.href='#';" style="cursor:pointer;">
 <div class="or56">
 <div class="imgst">
-<img alt="Naprawa zmywarek" class="imgs" decoding="async" loading="lazy" width="325" height="334" src="images/services-smartfixagd-8.webp"/>
+<img alt="" class="imgs" decoding="async" loading="lazy" src="images/services-smartfixagd-8.webp"/>
 </div>
 <span class="iconss2 or56"><i class="sicon-dishwasher"></i></span>
 <h3 class="prongl">Naprawa Zmywarek</h3>
@@ -2761,37 +2792,37 @@ background-position: center !important;box-shadow: 0px 0px 0px 5000px #0066ccbf 
     <div class="row uu">
       <div class="col-lg-2 col-md-4 col-6">
         <div class="h-yazi-ortalama h-yazi-margin-kucuk-21 wow fadeInUp" data-wow-delay="0.2s">
-          <img src="images/naprawa_serwis_lodówek_zamrażarek_piekarników_kuchenek_płytgrzewczych_okapów_zmywarek_pralek_suszarek_pralkosuszarek_Bosch.svg" alt="Serwis AGD Bosch" class="marka" loading="lazy" height="38">
+          <img src="images/naprawa_serwis_lodówek_zamrażarek_piekarników_kuchenek_płytgrzewczych_okapów_zmywarek_pralek_suszarek_pralkosuszarek_Bosch.svg" alt="Bosch" class="marka">
         </div>
       </div>
 
       <div class="col-lg-2 col-md-4 col-6">
         <div class="h-yazi-ortalama h-yazi-margin-kucuk-21 wow fadeInUp" data-wow-delay="0.3s">
-          <img src="images/naprawa_serwis_lodówek_zamrażarek_piekarników_kuchenek_płytgrzewczych_okapów_zmywarek_pralek_suszarek_pralkosuszarek_Whirlpool.svg" alt="Serwis AGD Whirlpool" class="marka" loading="lazy" height="38">
+          <img src="images/naprawa_serwis_lodówek_zamrażarek_piekarników_kuchenek_płytgrzewczych_okapów_zmywarek_pralek_suszarek_pralkosuszarek_Whirlpool.svg" alt="Whirlpool" class="marka">
         </div>
       </div>
 
       <div class="col-lg-2 col-md-4 col-6">
         <div class="h-yazi-ortalama h-yazi-margin-kucuk-21 wow fadeInUp" data-wow-delay="0.4s">
-          <img src="images/naprawa_serwis_lodówek_zamrażarek_piekarników_kuchenek_płytgrzewczych_okapów_zmywarek_pralek_suszarek_pralkosuszarek_Electrolux.svg" alt="Serwis AGD Electrolux" class="marka" loading="lazy" height="38">
+          <img src="images/naprawa_serwis_lodówek_zamrażarek_piekarników_kuchenek_płytgrzewczych_okapów_zmywarek_pralek_suszarek_pralkosuszarek_Electrolux.svg" alt="Electrolux" class="marka">
         </div>
       </div>
 
       <div class="col-lg-2 col-md-4 col-6">
         <div class="h-yazi-ortalama h-yazi-margin-kucuk-21 wow fadeInUp" data-wow-delay="0.5s">
-          <img src="images/naprawa_serwis_lodówek_zamrażarek_piekarników_kuchenek_płytgrzewczych_okapów_zmywarek_pralek_suszarek_pralkosuszarek_Samsung.svg" alt="Serwis AGD Samsung" class="marka" loading="lazy" height="38">
+          <img src="images/naprawa_serwis_lodówek_zamrażarek_piekarników_kuchenek_płytgrzewczych_okapów_zmywarek_pralek_suszarek_pralkosuszarek_Samsung.svg" alt="Samsung" class="marka">
         </div>
       </div>
 
       <div class="col-lg-2 col-md-4 col-6">
         <div class="h-yazi-ortalama h-yazi-margin-kucuk-21 wow fadeInUp" data-wow-delay="0.6s">
-          <img src="images/naprawa_serwis_lodówek_zamrażarek_piekarników_kuchenek_płytgrzewczych_okapów_zmywarek_pralek_suszarek_pralkosuszarek_LG.svg" alt="Serwis AGD LG" class="marka" loading="lazy" height="38">
+          <img src="images/naprawa_serwis_lodówek_zamrażarek_piekarników_kuchenek_płytgrzewczych_okapów_zmywarek_pralek_suszarek_pralkosuszarek_LG.svg" alt="LG" class="marka">
         </div>
       </div>
 
       <div class="col-lg-2 col-md-4 col-6">
         <div class="h-yazi-ortalama h-yazi-margin-kucuk-21 wow fadeInUp" data-wow-delay="0.7s">
-          <img src="images/naprawa_serwis_lodówek_zamrażarek_piekarników_kuchenek_płytgrzewczych_okapów_zmywarek_pralek_suszarek_pralkosuszarek_Siemens.svg" alt="Serwis AGD Siemens" class="marka" loading="lazy" height="38">
+          <img src="images/naprawa_serwis_lodówek_zamrażarek_piekarników_kuchenek_płytgrzewczych_okapów_zmywarek_pralek_suszarek_pralkosuszarek_Siemens.svg" alt="Siemens" class="marka">
         </div>
       </div>
     </div>
@@ -2802,7 +2833,7 @@ background-position: center !important;box-shadow: 0px 0px 0px 5000px #0066ccbf 
 <div class="container">
 <div class="row">
 <div class="col-xl-12 cce1 wow animated fadeInUp animated" data-wow-delay="0.5s">
-<div class="logo wow animated fadeInUp animated" data-wow-delay="0s"> <img alt="SmartFixAGD" loading="lazy" width="209" height="74" src="images/smartfixagd-logo-4.webp"/> </div>
+<div class="logo wow animated fadeInUp animated" data-wow-delay="0s"> <img alt="Image" loading="lazy" src="images/smartfixagd-logo-4.webp"/> </div>
 <div class="boslukf"></div>
 <div class="footer-menu1 wow animated fadeInUp animated" data-wow-delay="0.6s">
 <div class="menu-quick-links-container"><ul class="menu" id="menu-quick-links" itemscope="" itemtype="http://www.schema.org/SiteNavigationElement"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13481" id="menu-item-13481"><a href="about-us/index.html">O Nas</a></li>
@@ -3057,72 +3088,5 @@ document.querySelectorAll('#smartfix-form input, #smartfix-form textarea').forEa
         })
     </script>
     
-<script>
-(function() {
-    'use strict';
-    
-    function initSwiper() {
-        if (typeof Swiper !== 'undefined') {
-            const swiper = new Swiper('.main-slider', {
-                loop: true,
-                speed: 800,
-                autoplay: { 
-                    delay: 5000,
-                    disableOnInteraction: false 
-                },
-                lazy: {
-                    loadPrevNext: true,
-                    loadPrevNextAmount: 1
-                },
-                pagination: { 
-                    el: '.swiper-pagination', 
-                    clickable: true 
-                },
-                navigation: {
-                    nextEl: '.button-next',
-                    prevEl: '.button-prev'
-                },
-                on: {
-                    init: function() {
-                        this.slides.forEach(function(slide) {
-                            const img = slide.querySelector('.slide-image');
-                            if (img) {
-                                const bg = img.getAttribute('data-background');
-                                if (bg) {
-                                    img.style.backgroundImage = 'url(' + bg + ')';
-                                }
-                            }
-                        });
-                    }
-                }
-            });
-            return true;
-        }
-        return false;
-    }
-    
-    let attempts = 0;
-    const maxAttempts = 50;
-    
-    function tryInit() {
-        if (initSwiper()) {
-            console.log('✅ Swiper zainicjalizowany');
-        } else if (attempts < maxAttempts) {
-            attempts++;
-            setTimeout(tryInit, 100);
-        } else {
-            console.error('❌ Nie udało się zainicjalizować Swiper');
-        }
-    }
-    
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', tryInit);
-    } else {
-        tryInit();
-    }
-})();
-</script>
-
-    
 </body>
-</html> 
+</html>
