@@ -73,14 +73,28 @@
       }
   });
 
-  // WOW ANIMATION 
-  if (typeof WOW !== 'undefined') {
-    var wow = new WOW({
-      animateClass: 'animated',
-      offset: 0
+// WOW ANIMATION - ZOPTYMALIZOWANY DLA REDUKCJI CLS
+if (typeof WOW !== 'undefined') {
+  var wow = new WOW({
+    animateClass: 'animated',
+    offset: 0,
+    mobile: false,        // Wyłącz animacje na mobile (lepszy CLS)
+    live: false,          // Wyłącz ciągłe sprawdzanie DOM (lepsza wydajność)
+    resetAnimation: false // Nie resetuj animacji przy scrollu
+  });
+  wow.init();
+  
+  // Dodatkowa optymalizacja - usuń will-change po zakończeniu animacji
+  document.addEventListener('DOMContentLoaded', function() {
+    var animatedElements = document.querySelectorAll('.wow');
+    
+    animatedElements.forEach(function(element) {
+      element.addEventListener('animationend', function() {
+        this.style.willChange = 'auto';
+      });
     });
-    wow.init();
-  }
+  });
+}
   
   // --- GŁÓWNY SLIDER (MAIN SLIDER) ---
   // Uruchamia się dla wszystkich urządzeń
