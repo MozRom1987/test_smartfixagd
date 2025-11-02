@@ -365,52 +365,70 @@ i[class^=flaticon-]:before,i[class*=" flaticon-"]:before{
 
 /* Definicje nowych ikon Z WYMUSZONYMI WYSOKOŚCIAMI */
 .sicon-whater_heater:before {
-    content: "\e900";
-    line-height: inherit;
-}
-.sicon-oven:before {
-    content: "\e901";
-    line-height: inherit;
-}
-.sicon-mikrovave:before {
-    content: "\e902";
-    line-height: inherit;
-}
-.sicon-hood:before {
-    content: "\e903";
-    line-height: inherit;
-}
-.sicon-refrigerator:before {
-    content: "\e904";
-    line-height: inherit;
-}
-.sicon-dryer:before {
     content: "\e905";
     line-height: inherit;
 }
-.sicon-cooker:before {
+.sicon-oven:before {
     content: "\e906";
     line-height: inherit;
 }
-.sicon-freezer:before {
+.sicon-mikrovave:before {
     content: "\e907";
     line-height: inherit;
 }
-.sicon-dishwasher:before {
+.sicon-hood:before {
     content: "\e908";
     line-height: inherit;
 }
-.sicon-washer:before {
+.sicon-refrigerator:before {
     content: "\e909";
     line-height: inherit;
 }
-.sicon-gas_stove:before {
+.sicon-dryer:before {
     content: "\e90a";
     line-height: inherit;
 }
-.sicon-electrical_stove:before {
+.sicon-cooker:before {
     content: "\e90b";
     line-height: inherit;
+}
+.sicon-freezer:before {
+    content: "\e90c";
+    line-height: inherit;
+}
+.sicon-dishwasher:before {
+    content: "\e90d";
+    line-height: inherit;
+}
+.sicon-washer:before {
+    content: "\e90e";
+    line-height: inherit;
+}
+.sicon-gas_stove:before {
+    content: "\e90f";
+    line-height: inherit;
+}
+.sicon-electrical_stove:before {
+    content: "\e910";
+    line-height: inherit;
+}
+.sicon-5_star:before {
+    content: "\e900";
+    line-height: inherit;
+}
+.sicon-4_star:before {
+    content: "\e901";
+    line-height: inherit;
+}
+.sicon-3_star:before {
+    content: "\e902";
+    line-height: inherit;
+}
+.sicon-2_star:before {
+    content: "\e903";
+}
+.sicon-1_star:before {
+    content: "\e904";
 }
 
 /* ===== SPECJALNE STYLE DLA KONKRETNYCH SEKCJI ===== */
