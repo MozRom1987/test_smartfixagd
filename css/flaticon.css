@@ -431,45 +431,6 @@ i[class^=flaticon-]:before,i[class*=" flaticon-"]:before{
     content: "\e904";
 }
 
-@font-face {
-    font-family: 'footericon';
-    src: url('fonts/footericon.woff2') format('woff2'),
-         url('fonts/footericon.woff') format('woff');
-    font-display: swap;
-    font-weight: normal;
-    font-style: normal;
-}
-
-[class^="ficon-"], [class*=" ficon-"] {
-    font-family: 'footericon' !important;
-    speak: never;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    display: inline-block;
-    vertical-align: middle;
-}
-
-.ficon-144-location:before {
-    content: "\f190";
-    line-height: inherit;
-}
-.ficon-145-email:before {
-    content: "\f191";
-    line-height: inherit;
-}
-.ficon-210-call-center:before {
-    content: "\f1d1";
-    line-height: inherit;
-}
-.ficon-217-headphones:before {
-    content: "\f1d8";
-    line-height: inherit;
-}
 
 /* ===== SPECJALNE STYLE DLA KONKRETNYCH SEKCJI ===== */
 
