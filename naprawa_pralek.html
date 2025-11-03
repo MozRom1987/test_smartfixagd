@@ -1,26 +1,20 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
+    <!-- Wszystkie meta tagi, style i skrypty pozostają bez zmian -->
+    <link as="style" href="/css/style_smartfix_polish.css" rel="preload"/>
+    <link as="style" href="/css/bootstrap.min.css?ver=1" rel="preload"/>
+    <link as="style" href="/css/style.css?ver=1" rel="preload"/>
+    <link as="style" href="/css/flaticon.css" rel="preload"/>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <meta content="max-image-preview:large" name="robots"/>
     <style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
-<!-- Bootstrap -->
-<link rel="preload" href="/css/bootstrap.min.css?ver=1" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="/css/bootstrap.min.css?ver=1"></noscript>
-
-<!-- Główny styl -->
-<link rel="preload" href="/css/style.css?ver=1" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="/css/style.css?ver=1"></noscript>
-
-<!-- Styl SmartFix (polska wersja) -->
-<link rel="preload" href="/css/style_smartfix_polish.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="/css/style_smartfix_polish.css"></noscript>
-
-<!-- Ikony Flaticon -->
-<link rel="preload" href="/css/flaticon.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="/css/flaticon.css"></noscript>
-
+    <link href="/css/style.css?ver=1" id="style-css" media="all" rel="stylesheet"/>
+    <link href="/css/bootstrap.min.css?ver=1" id="bootstrap-css" media="all" rel="stylesheet"/>
+    <link rel="preload" href="/css/flaticon.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/flaticon.css"></noscript>
+    <link href="/css/style_smartfix_polish.css" rel="stylesheet">
     <link href="https://smartfixagd.pl/" rel="canonical"/>
     <title>SmartFixAGD - Profesjonalny Serwis AGD | Naprawa Lodówek, Pralek, Piekarników</title>
     
@@ -29,10 +23,8 @@
     <link rel="preload" href="css/fonts/outfit/outfit-v15-latin_latin-ext-600.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" href="css/fonts/outfit/outfit-v15-latin_latin-ext-700.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" href="css/fonts/smartfix-icons.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" href="css/fonts/flaticon.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" href="css/fonts/flaticona1f9a1f9.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" href="css/fonts/icomoon.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    
+    <link rel="preload" href="css/fonts/footericon.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
 <style>
 @font-face {
     font-family: 'Outfit';
@@ -2825,7 +2817,7 @@ h3.prongl {
                                         <div class="row yk" onclick="location.href='#';" style="cursor:pointer;">
                                             <div class="col-lg-12 ft">
                                                 <div class="icosa">
-                                                    <div class="iconheal"><i class="flaticon-headphones"></i></div>
+                                                    <div class="iconheal"><i class="ficon-217-headphones"></i></div>
                                                     <div class="bosluk333"></div>
                                                     <h4 class="services-kutu2--wt13 wow fade">Telefon kontaktowy</h4>
                                                     <h2 class="h2-baslik-anasayfa-wthe wow fade"><a aria-label="Zadzwoń do SmartFixAGD" href="tel:+48573663823">+48 573 663 823</a></h2>
@@ -2837,7 +2829,7 @@ h3.prongl {
                                         <div class="row yk" onclick="location.href='#';" style="cursor:pointer;">
                                             <div class="col-lg-12 ft">
                                                 <div class="icosa">
-                                                    <div class="iconheal"><i class="flaticon-call-center"></i></div>
+                                                    <div class="iconheal"><i class="ficon-210-call-center"></i></div>
                                                     <div class="bosluk333"></div>
                                                     <h4 class="services-kutu2--wt13 wow fade">Godziny pracy</h4>
                                                     <h2 class="h2-baslik-anasayfa-wthe wow fade" >08.00-20.00</h2>
@@ -2849,7 +2841,7 @@ h3.prongl {
                                         <div class="row yk" onclick="location.href='#';" style="cursor:pointer;">
                                             <div class="col-lg-12 ft">
                                                 <div class="icosa">
-                                                    <div class="iconheal"><i class="flaticon-email"></i></div>
+                                                    <div class="iconheal"><i class="ficon-145-email"></i></div>
                                                     <div class="bosluk333"></div>
                                                     <h4 class="services-kutu2--wt13 wow fade">Adres email</h4>
                                                     <h2 class="h2-baslik-anasayfa-wthe wow fade">smartfixagd@gmail.com</h2>
@@ -2861,7 +2853,7 @@ h3.prongl {
                                         <div class="row yk" onclick="location.href='#';" style="cursor:pointer;">
                                             <div class="col-lg-12 ft">
                                                 <div class="icosa">
-                                                    <div class="iconheal"><i class="flaticon-location"></i></div>
+                                                    <div class="iconheal"><i class="ficon-144-location"></i></div>
                                                     <div class="bosluk333"></div>
                                                     <h4 class="services-kutu2--wt13 wow fade">Zasięg serwisu</h4>
                                                     <h2 class="h2-baslik-anasayfa-wthe wow fade">Powiat Przemyski i Jarosławski</h2>
@@ -2899,10 +2891,10 @@ h3.prongl {
 </footer>
 
 <!-- Wszystkie skrypty pozostają -->
-<script id="jquery-js" src="js/jquery.min.js?ver=1" defer></script>
-<script id="wow-js" src="js/wow.min.js?ver=1" defer></script>
-<script id="scripts-js" src="js/scripts.js?ver=1" defer></script>
-<script id="yukari-cik-js" src="js/yukari-cik.js?ver=1" defer></script>
+<script id="jquery-js" src="js/jquery.min.js?ver=1"></script>
+<script id="wow-js" src="js/wow.min.js?ver=1"></script>
+<script id="scripts-js" src="js/scripts.js?ver=1"></script>
+<script id="yukari-cik-js" src="js/yukari-cik.js?ver=1"></script>
 
 
 </body>
