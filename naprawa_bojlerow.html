@@ -10,9 +10,7 @@
     <meta content="max-image-preview:large" name="robots"/>
     <style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
     <link href="css/style.css?ver=1" id="style-css" media="all" rel="stylesheet"/>
-    <link rel="preload" href="css/swiper.min.css?ver=1" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="css/swiper.min.css?ver=1"></noscript>
-    <link href="css/bootstrap.min.css?ver=1" id="bootstrap-css" media="all" rel="stylesheet"/>
+        <link href="css/bootstrap.min.css?ver=1" id="bootstrap-css" media="all" rel="stylesheet"/>
     <link rel="preload" href="css/flaticon.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="css/flaticon.css"></noscript>
     <link href="css/style_smartfix_polish.css" rel="stylesheet">
@@ -2621,7 +2619,18 @@ h3.prongl {
 <div class="container">
 <div class="row">
 <div class="col-xl-6">
-<img alt="" class="galeri__gorsel--3ab zimage" decoding="async" loading="lazy" src="images/serwis_bojlerów.webp"/>
+<img alt="Naprawa Bojlerów SmartFixAGD" 
+     class="galeri__gorsel--3ab zimage" 
+     decoding="async" 
+     loading="eager"
+     fetchpriority="high"
+     src="images/serwis_bojlerow-400.webp"
+     srcset="images/serwis_bojlerow-400.webp 400w,
+             images/serwis_bojlerow.webp 695w"
+     sizes="(max-width: 768px) 100vw, 382px"
+     width="695"
+     height="618"
+     style="max-width: 100%; height: auto;">
 </div>
 <div class="col-xl-6 wow fadeInUp" data-wow-delay="0.3s">
 <h1 class="h2-baslik-anasayfa-ozel btw wow fadeInRight" data-wow-delay="0.4s" style="text-align:left;"> Naprawa i serwis bojlerów elektrycznych Przemyśl, Jarosław – grzałki, termostaty, zawory </h1>
@@ -2883,10 +2892,8 @@ h3.prongl {
 
 <!-- Wszystkie skrypty pozostają -->
 <script id="jquery-js" src="js/jquery.min.js?ver=1" defer></script>
-<script id="swiper-js" src="js/swiper.min.js?ver=1" defer></script>
 <script id="wow-js" src="js/wow.min.js?ver=1" defer></script>
 <script id="scripts-js" src="js/scripts.js?ver=1" defer></script>
-<script id="3d-js" src="js/3d.jquery.js?ver=1" defer></script>
 <script id="pointer-js" src="js/pointer.js?ver=1" defer></script>
 <script id="yukari-cik-js" src="js/yukari-cik.js?ver=1" defer></script>
 
